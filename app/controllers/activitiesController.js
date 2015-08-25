@@ -52,9 +52,11 @@ App
 										{
 											element.iconClass="icon-star"
 												var clickedObject=$scope.physicalActivities[index];
-											var obj={
+											var obj=
+											{
 												    "empId" : $rootScope.empID,
 												    "actionNeeded" : "delete",
+												    
 												    "activity" : 
 												    {
 												        "activityId" : clickedObject.activityId,
@@ -113,6 +115,7 @@ App
 									    {
 									     activityName:data.entities[i].activityName,
 									     imgName:data.entities[i].imgName,
+									     text:"Add to favourite",
 									     activityId:data.entities[i].activityId,
 									     iconClass:"icon-star"
 									    };
@@ -126,6 +129,7 @@ App
 							    		  if($scope.favourites[j].activityId==activities_formatted[k].activityId)
 							    			  {						    			
 							    			      activities_formatted[k].iconClass="fa fa-star";
+							    			      activities_formatted[k].text="Remove as favourite";
 							    			   //   alert(JSON.stringify(activities_formatted[k]));
 							    				  break;
 							    			  }									    		 
