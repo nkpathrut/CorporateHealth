@@ -7,7 +7,17 @@ App
 						'$http',
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
-																			
+																	
+							$rootScope.div_show=function(friend) {
+								 //alert(JSON.stringify(friend));
+								document.getElementById('xyz').style.display = "block";
+								}
+								
+								//Function to Hide Popup
+								$rootScope.div_hide=function(){
+								document.getElementById('xyz').style.display = "none";
+								}
+								
 							//alert("Profile Controller");
 						      var userInfo = angular.fromJson($rootScope.$storage['userInfo']);
 						      if(userInfo==undefined)
