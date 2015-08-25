@@ -1,0 +1,21 @@
+[
+  {
+    "text": "Menu Heading",
+    "heading": "true",
+    "translate": "sidebar.heading.HEADER"
+  },
+  {
+    "text": "Login View",
+    "sref": "login",
+    "icon": "fa fa-file-o",
+    "translate": "sidebar.nav.LOGIN"
+  },
+  {
+    "text": "Health Record",
+    "sref": "app.healthrecord",
+    "icon": "fa fa-file-o",
+    "translate": "sidebar.nav.HEALTHRECORD"
+  }
+  
+
+]

@@ -1,0 +1,73 @@
+<div id="LoginController" class="block-center mt-xl wd-xl">
+   <!-- START panel-->
+   
+   <div id="LoginPanel" class="mypanel panel-dark panel-flat" style="background-color:transparent;" >
+      <div id="PanelHead"class="panel-heading text-center" style="margin-top:20%;">
+         <a id="RefLogo"  href="#">
+            <img id="logo" src="app/img/logo.png" alt="Image" class="block-center thumb256"/>
+         </a>
+      </div>
+      <div id="PanelBody" class="panel-body" style="margin-top:15.5%;">
+         <form id="PanelForm" role="form" ng-submit="login()" validate-form="" novalidate="" class="mb-lg">
+           <div id="UserNameForm" class="form-group has-feedback left-inner-addon">
+               <input type="text" placeholder="&#xf0e0;  Email address" autocomplete="off"  ng-model="account.email" required="required" class="iconified form-control empty username" style="padding-right: 16px !important;"  />
+		   </div>
+            <div id="PasswordForm" class="form-group has-feedback">
+               <input id="password" type="password" placeholder="&#xf023;   Password" ng-model="account.password" required="required" class="iconified form-control password empty" style="padding-right: 16px !important;" />
+			</div>
+           
+            <button id="LoginBtn" type="submit" class="btn btn-block btn-success" style="font-size:18px;background-color:transparent !important;border-color:#ffffff;margin-top:15.5%;">Login</button><br/>
+			<!--<a id="Register" href="#"  class="pull-left text-alpha inline" style=" font-size:120%;">Create account</a>-->
+			<center><div id="ForgotPass"  class="text-alpha inline" style="font-size:15px;margin-top: -5px !important;" ng-click="div_show()">Forgot password?<div></center>
+			
+         </form>
+		 
+		<div id="AlertForm" ng-show="authMsg" class="alert alert-danger text-center col-xs-12">{{authMsg}}</div>
+      </div>
+	  </div>
+	  
+	  <div id="abc">
+<!-- Popup Div Starts Here -->
+<div id="popupContact">
+<!-- Contact Info Form -->
+<div align="center"> 
+<form action="#" id="form" method="post" name="form" class="myform" style="margin-top: 40px !important;margin-left:17%;width: 350px;">
+<img id="close" src="app/img/icons/close.png" class="thumb16" ng-click ="div_hide()" style="right: -38px !important;top: 52px !important;">
+
+<h2 id="header" class="header" style="width: 296px;height: 66px;">	
+	<div  style="color:#ffffff;font-family: roboto; font-size:20px;" >Reset Password</div>
+		
+			</h2>
+			
+			
+<table class="table table-borderless form-group" style="margin-top:20px;margin-left:-40px;">
+                   <tbody>
+                     <tr>
+                        <td class="row-sm-12" ><p1 id="taddress" class="inline forgotTitle " style="margin-left: 2px !important;">New Password</p1><br/>
+					<input type="text" id="newpass" class="form-control inline forgotData " style="width:250px !important; border:1px solid #b8b8b8;" size="20" spellcheck="false"/>
+						</td>
+                     </tr>
+					 <tr>
+                        <td class="row-sm-12"><p1 id="taddress" class="inline forgotTitle" style="margin-left: 2px !important;">Confirm Password</p1><br/>
+						<center><input type="password"  id="confirmpass"  class="form-control inline forgotData" style="width:250px !important;border:1px solid #b8b8b8;" size="20" spellcheck="false"/></center>
+						</td>
+                     </tr>
+					 <tr>
+                        <td class="row-sm-12">
+						
+						<center>
+           <button type="button" ng-click="back()" class="btn btn-lg ml_next" style="font-family: roboto !important; margin-left: 0px !important;color:#ffffff !important;background-color:#009345 !important; margin-top:10px;margin-bottom:10px;padding-top: 5px !important;padding-bottom: 5px!important; font-size: 20px !important;width:100%;background-color:#ffffff;color:#009245;border-color:#009245;">Submit</button>
+		</center>
+						
+						
+						</td>
+                     </tr>
+                  </tbody>
+               </table>
+
+</form></div>
+</div>
+<!-- Popup Div Ends Here -->
+</div>
+	 </div>
+   <!-- END panel-->

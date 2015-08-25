@@ -1,0 +1,91 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<header ng-include="'app/views/partials/myHeader.html'" class=" mt0 pt0"></header>
+<!-- start top accordion -->
+<div id="accordion1">
+<div class="bg-gray row  pb0 container-fluid pt20 mt mypanel-heading" style="min-height:50px;" ng-click="clickedAccordion='accordionIcon1'">
+    <div class="col-xs-12 pl0 pr0 pt pb">
+
+        <div class="col-xs-1"><img src="app/img/icons/filter.png" alt="Image" class="img-thumbnails" style="height:28px;width:35px;"></div>
+        <div class="col-xs-9 ">
+            <!-- start select box -->
+            <div class="panel-group pl mb0" ><!-- removed accordion 2 from here -->
+                <!-- data-toggle="collapse" data-parent="#accordion1" href=".collapseTwo" -->
+                <div data-toggle="collapse" data-parent="#accordion1" href=".collapseOne" style="font-size:2.3rem;">
+                    <span class="text-bold">All Groups</span>
+                    <i id="accordionIcon1" class="indicator glyphicon glyphicon-chevron-up  pl" style="color:#9E9E9E;"></i>
+                </div>
+            </div>
+            <!-- End select box -->
+        </div>
+        <div class="col-xs-2 text-right" style="font-size:2rem;">
+		<img class="indicator img-thumbnail thumb30 " src="app/img/icons/add_group.png" ng-click="createGroup()" alt="..." />
+		</div>
+    </div>
+
+
+</div>
+
+<div id="collapseOne" class="panel-collapse collapse in bg-gray collapseOne p0">
+    <div class="panel-body p0">
+
+            <!-- start group -->
+<div class="container-fluid bg-gray col-xs-12" style="display:table-cell;height:50px;line-height: 3.3;" ng-repeat-start="data in groups track by $index">{{data.groupActivity}}</div>
+<div class="col-xs-12 bg-white container-fluid pl0 pr0" style="display:table-cell;height:50px;line-height: 2.5;border-bottom: 2px solid #dde6e9;" ng-repeat-end="">
+    <div class="col-xs-8" style="font-size:2rem;">{{data.groupName}}</div>
+	<div class="col-xs-2 text-right" style="font-size:2rem;"><img class="img-thumbnail thumb30 " src="app/img/icons/group.png" alt="..." /></div>
+    <div class="col-xs-2 text-right" style="font-size:2rem;"><img class="img-thumbnail thumb30 " src="app/img/icons/chat.png" alt="..." ng-click="changeState('app.chatPage')" /></div>
+</div>
+<!-- End Group -->
+        </div>
+    </div>
+</div>
+
+
+<!-- end top accordion -->
+
+
+
+
+<!-- start bottom accordion -->
+<div id="accordion2">
+<div class="bg-gray row  pb0 container-fluid pt20 mt mypanel-heading" style="min-height:50px;" ng-click="clickedAccordion='accordionIcon2'">
+    <div class="col-xs-12 pl0 pr0 pt pb">
+
+        <div class="col-xs-1"><img src="app/img/icons/filter.png" alt="Image" class="img-thumbnails" style="height:28px;width:35px;"></div>
+        <div class="col-xs-9 ">
+            <!-- start select box -->
+            <div class="panel-group pl mb0" ><!-- removed accordion 2 from here -->
+                <!-- data-toggle="collapse" data-parent="#accordion2" href=".collapseTwo" -->
+                <div data-toggle="collapse" data-parent="#accordion2" href=".collapseTwo" style="font-size:2.3rem;">
+                    <span class="text-bold">All Friends</span>
+                    <i id="accordionIcon2" class="indicator glyphicon glyphicon-chevron-down  pl" style="color:#9E9E9E;"></i>
+                </div>
+            </div>
+            <!-- End select box -->
+        </div>
+        <div class="col-xs-2 text-right" style="font-size:2rem;">
+		<img class="indicator img-thumbnail thumb30 " src="app/img/icons/add_friend.png" ng-click="addFriends()" alt="..." />
+		</div>
+    </div>
+
+
+</div>
+
+<div id="collapseTWo" class="panel-collapse collapse bg-gray collapseTwo p0">
+    <div class="panel-body p0">
+    <div clas="p0 m0" ng-repeat="data in friends track by $index">
+        <div class="container-fluid  col-xs-4" style="display:table-cell;height:50px;line-height: 3.3;">{{data.activityName}}</div>
+        <div style="width:100%;min-height:1px;max-height:1px;background-color:black;" class="col-xs-12"></div>
+        <div class="col-xs-12 pr0 pl0 pt pb">
+            <div class="col-xs-4"  ng-repeat="(findex,friend) in data.friendsList track by findex">
+                <img class="thumb100 img-circle" src="app/img/user/10.jpg"></img>
+                <div class="col-xs-12 text-center pl0 pr0">{{friend}}</div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<!-- end bottom accordion -->

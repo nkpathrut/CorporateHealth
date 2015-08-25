@@ -1,0 +1,140 @@
+<header ng-include="'app/views/partials/myHeader.html'" class=" mt0 pt0"></header>
+
+<div>
+     <div class="row mt mb" style="margin-left:1%; margin-right:1%; ">
+        <div class="col-xs-4 pull-left" style="margin-top:2px;padding-right:0 !important;">Activities*</div>
+        <div class="col-xs-8" style="padding-left:0 !important;">
+            <select id="activities" ng-options="activity.activityName as activity.activityName for activity in activities" ng-model="selectedActivity" name="activity" class="form-control" style="border-radius: 0px !important;  border: 1px solid #b8b8b8;font-size: 12px;height: 30px;align-items: center;padding: 5px 16px;">
+                   <option>Select Activity</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mt mb" style="margin-left:1%; margin-right:1%; ">
+        <div class="col-xs-4 pull-left" style="margin-top:2px;padding-right:0 !important;">Groups*</div>
+        <div class="col-xs-8" style="padding-left:0 !important;">
+            <select id="groups" ng-options="group.groupId as group.groupName for group in groups" ng-model="selectedGroup" name="groups" class="form-control" style="border-radius: 0px !important;  border: 1px solid #b8b8b8;font-size: 12px;height: 30px;align-items: center;padding: 5px 16px;">
+
+            </select>
+        </div>
+    </div>
+
+    <div class="row mt mb" style="margin-left:1%; margin-right:1%;" >
+        <div class="col-xs-6" style="width:45% !important; margin-top:2px; padding-right:0 !important;">Add People to Group*</div>
+        <div class="col-xs-6" style=" width:55% !important;padding-left:0 !important;">
+            <div class="form-group has-feedback">
+                <input id="search" type="text" placeholder="Type and hit enter.." style="border-radius: 20px !important; " class="form-control peopleSearch">
+                <div search-dismiss="search-dismiss" class="icon-magnifier form-control-feedback" style="top:5px;z-index:0;"></div>
+            </div>
+        </div>
+    </div>
+   
+	<div class="col-xs-12 pb " style="background-color: #ebebeb;margin-bottom:10px !important; "><!-- select box -->
+
+        <div class="col-xs-4 mb" style="margin-left:0px !important;margin-right:0px !important; ">
+			<div style="padding-top: 10px !important;">My Friends</div>
+		</div>
+		
+		 <div class="col-xs-3 mb" style="margin-left:0px !important;margin-right:0px !important; "></div>
+		 
+		 <div class="col-xs-5 mb" style="float:right !important;padding-right: 0px; !important">
+			<div class="col-xs-9 pt">Select All</div>
+			<div class="checkbox c-checkbox m0 col-xs-3 pt" style="padding-left: 2px !important;">
+                    <label>
+                        <input type="checkbox" ng-model="selectAllFlag" ng-change="toggleSelectAll()"  checked="checked">
+                        <span class="fa fa-check" style="background-color: #eaeaea !important; color:#8C8C8C !important; border: 2px solid #8C8C8C !important;"></span>
+                </label></div>
+  
+        </div>
+   
+</div>
+    <div class="row pt pb ml" ng-repeat-start="friend in employees track by $index">
+        <div class="col-xs-2">
+            <img class="img-circle thumb32" src="app/img/user/03.jpg" alt="..." />
+        </div>
+        <div class="col-xs-5" style="margin-top:5px;padding-left:0 !important;padding-right:0 !important;">
+            {{friend.employeeName}}
+        </div>
+        <div class="col-xs-2" style="padding-left:0 !important;padding-right:0 !important;">
+            <img src="app/img/icons/info.png" class="thumb20" style="margin-top:5px;" ng-click="div_show(friend)">
+        </div>
+        <div class="col-xs-3" style="padding-left:0 !important;padding-right:0 !important;">
+            <button id="friend1" style="width:60%;" ng-class="{'btn-success':!status1,  'btn-default':status1}" class="btn btn-sm btn-success">
+                <i id="addedFriend{{$index}}" class="fa fa-check"  ng-click="toggle_friend($index)" ng-show="friend.showAdd"></i>
+                <div id="addFriend{{$index}}"  ng-click="toggle_friend($index)" ng-show="!friend.showAdd">Add</div>
+            </button>
+        </div>
+    </div>
+    <hr class="rmUnderline" ng-repeat-end="">
+
+   <!-- <hr class="rmUnderlinebold" style="border-color: #eaeaea !important;" />
+    <div class="row" style="position:absolute; margin-top:-30px; margin-left:1%; margin-right:1%;">
+        <div class="col-xs-12">
+                <div class="checkbox c-checkbox">
+                    <label>
+                        <input type="checkbox" checked="" value="">
+                        <span class="fa fa-check" style="background-color: #eaeaea !important; color:#8C8C8C !important; border: 2px solid #8C8C8C !important;"></span>&nbsp;Others</label>
+                </div>
+        </div>
+    </div>-->
+
+   <!--start code for bottom buttons -->
+	  <div style="background-color: #eaeaea;" >
+	 <div class="row" style="margin-left:1%; margin-right:1%;" >
+        <div class="col-xs-6"><center>
+            <button type="button" ng-click="back()" class="btn btn-lg ml_next" style="margin-top: 10px;margin-bottom: 10px; padding-top: 5px !important;padding-bottom: 5px!important;font-size: 16px !important;width:100%;background-color:#ffffff;color:#009245;border-color:#009245;">Cancel</button>
+		</center></div>
+		<div class="col-xs-6"><center>
+            <button ng-click="addFriends()" type="button"  class="btn btn-lg ml_next" style="color:#ffffff !important;background-color:#009345 !important; margin-top:10px;margin-bottom:10px;padding-top: 5px !important;padding-bottom: 5px!important; font-size: 16px !important;width:100%;background-color:#ffffff;color:#009245;border-color:#009245;">Add Friends</button>
+		</center></div>	
+        </div>
+		</div> 
+		 <!--end code for bottom buttons -->
+    </div>
+<div id="abc">
+<!-- Popup Div Starts Here -->
+<div id="popupContact">
+<!-- Contact Info Form -->
+<div align="center"> 
+<form action="#" id="form" method="post" name="form" class="myform" style="margin-left:17%;width: 350px;">
+<img id="close" src="app/img/icons/close.png" class="thumb16" ng-click ="div_hide()">
+
+<h2 id="header" class="header" style="width: 296px;height: 106px;">	
+		<div class="row" style="position:absolute; " >
+				<div class="col-xs-4  inline" style="padding-left: 0px !important;" >
+					<img class="img-circle thumb90 " style="margin-top: 5px; !important" src="app/img/user/10.jpg" alt="..." >
+				</div>	
+				<div class="col-xs-8 inline pt15" style="padding-right: 0px !important;padding-left: 20px !important;" >
+						<div  style="color:#ffffff;font-family: roboto; font-size:20px;" >Mayank Senani</div>
+						<div   style="color:#7ac943;font-family: roboto; font-size:15px; margin-top: 5px; ">EMPOYEE ID 017902</div>  
+				</div>
+			</div>	
+			</h2>
+			
+			
+<table class="table table-borderless" style="margin-top:20px;margin-left:-45px;">
+                   <tbody>
+                     <tr>
+                        <td class="row-sm-12" ><p1 id="taddress" class="inline subTitle ">Official Tel. No:</p1><br/>
+						<p1 id="address" class="form-control-static inline data " style="padding-top: 0px !important;" spellcheck="false">022-2655588</p1>
+						<hr class="rmUnderline" >
+						</td>
+                     </tr>
+					 <tr>
+                        <td class="row-sm-12"><p1 id="taddress" class="inline subTitle ">Mobile No:</p1><br/>
+						<p1 id="address" class="form-control-static inline data " style="padding-top: 0px !important;" spellcheck="false">9222244444</p1>
+						<hr class="rmUnderline" >
+						</td>
+                     </tr>
+					 <tr>
+                        <td class="row-sm-12"><p1 id="taddress" class="inline subTitle ">Email ID:</p1><br/>
+						<p1 id="address" class="form-control-static inline data"  style="width: 16em; word-wrap: break-word; padding-top: 0px !important;" spellcheck="false">mayank_senani@persistent.co.in</p1>
+						<hr class="rmUnderline" >
+						</td>
+                     </tr>
+                  </tbody>
+               </table>
+
+</form></div>
+</div>
+<!-- Popup Div Ends Here -->
+</div>

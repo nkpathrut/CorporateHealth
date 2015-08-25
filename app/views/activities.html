@@ -1,0 +1,72 @@
+<header ng-include="'app/views/partials/myHeader.html'" class=" mt0 pt0"></header>
+<div>
+    <div class="panel" style="margin-bottom:-20px !important;">
+        <tabset id="tabset" justified="true">
+            <tab id="tab" class="tabWidth">
+                <tab-heading style="font-size:100%;">All Activities</tab-heading>
+                <div>
+                    <!-- START widget-->
+                    <div class="panel widget bg-fav">
+                        <div class="row row-table row-flush" style="position:relative; padding-top:5%" ng-repeat="data in physicalActivities">
+                            <div class="col-xs-12">
+                                <div style="position: relative; background: url(app/img/activities/{{data.imgName}}.jpg); background-size: 100% 140px; width: 100%; height: 140px;">
+                                    <div style="position: absolute; bottom: 0; left: 0;  height: 30px; width:100%;  color: #fff; background-color:#000000; color: #fff; opacity:0.6 ">
+                                        <table class="table table-borderless" style="bottom: 0; left: 0.5em; ">
+                                            <tr>
+                                                <td valign="center" class="pull-left" style="padding-top: 5px !important;"><span style="font-size:100%;color:white;">{{data.activityName}}</span>
+                                                </td>
+                                                <td valign="center" class="pull-right" style="padding-top: 5px !important;">
+                                                    <div class="pull-right"><span style="font-size:100%;color:white;">Add to Favourite</span>
+                                                        <span id="notfav{{$index}}" ng-class="data.iconClass" ng-click="toggleFav($index,data);" style="font-size:120%; color:white;">
+					                                    </span>
+					                                </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END widget-->
+                </div>
+            </tab>
+            <tab class="tabWidth">
+                <tab-heading style="font-size:100%;">My Favourite</tab-heading>
+                <div>
+                    <!-- START widget-->
+                    <div class="panel widget bg-fav">
+                        <div class="row row-table row-flush" style="position:relative; padding-top:5%" ng-click="changeState('app.gymdetails')" ng-repeat="favourite in favourites">
+                            <div class="col-xs-12">
+                                <div style="position: relative; background: url(app/img/activities/{{favourite.imgName}}.jpg); background-size: 100% 140px; width: 100%; height: 140px;">
+                                    <img class="img-thumbnail right-image pull-right" src="app/img/icons/arrow_activities.png" style="width:30px; height:50px;" alt="..." />
+
+                                    <div style="position: absolute; bottom: 0; left: 0;  height: 30px; width: 100%;  color: #fff; background-color:#000000; color: #fff; opacity:0.6 ">
+                                        <table class="table table-borderless" style="bottom: 0; left: 0.5em; ">
+                                            <tr>
+                                                <td valign="center" class="pull-left" style="padding-top: 5px !important;"><span style="font-size:100%;color:white;">{{favourite.activityName}}</span>
+                                                </td>
+                                                <td valign="center" class="pull-right" style="padding-top: 5px !important;">
+                                                    <div class="pull-right"><span style="font-size:100%;color:white;"></span>
+
+                                                        <!-- 					 <span id="infav1" class=" fa fa-star " ng-click="toggleFav();" style="font-size:120%; color:white;"> -->
+                                                        <!-- 					 </span> -->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END widget-->
+                </div>
+            </tab>
+        </tabset>
+    </div>
+
+
+    <center>
+        <button type="button" ng-click="changeState('app.home')" class="btn btn-lg ml_next" style="margin-bottom:6% !important;margin-top:5%  !important;width:88%;background-color:#ffffff;color:#009245;border-color:#009245;padding-top: 5px;margin-left: 0px !important;padding-bottom: 5px;font-size: large  !important;font-weight: bold  !important;">Next</button>
+    </center>

@@ -1,0 +1,22 @@
+{
+  "dashboard": {
+    "WELCOME": "Welcome to {{appName}}"
+  },
+  "topbar": {
+    "search": {
+      "PLACEHOLDER": "Type and hit enter.."
+    }
+  },
+  "sidebar": {
+    "WELCOME": "Welcome",
+	"OWNVIEW": "My very own view",
+    "heading": {
+      "HEADER": "Main Navigation"
+    },
+    "nav": {
+      "LOGIN": "Login View",
+      "HEALTHRECORD": "Health Record"
+     
+    }
+  }
+}

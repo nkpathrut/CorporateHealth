@@ -1,0 +1,146 @@
+<div ng-controller="healthrecordController">
+<accordion close-others="false">
+    <accordion-group is-open="true" is-disabled="true"><!-- First Accordion -->
+        <accordion-heading>General Info
+        <!--  <i class="pull-right ng-scope fa fa-chevron-down" ></i> ng-class="{'fa-chevron-down':!status.isOuterFirstOpen, 'fa-chevron-up': status.isOuterFirstOpen}"-->
+          
+        </accordion-heading>
+        <div class="">
+            <!-- removed col-xs-6 from here -->
+
+            <ul class="list-unstyled">
+                <li class="mb-sm">
+                    <strong>Name:</strong><span>&nbsp;Mayank Senani</span>
+                </li>
+                <li class="mb-sm">
+                    <div class="col-xs-6 text-left p0">
+                        <strong>Age:&nbsp;</strong><span>23</span>
+                    </div>
+                    <div class="col-xs-6 text-left p0">
+                        <strong>Gender:&nbsp;</strong><span>Male</span>
+                    </div>
+                </li>
+
+                <li class="mb-sm pt  pl0 ml0 col-xs-12">
+                    <div class="col-xs-6 text-left p0">
+                        <strong class="pb mb">Height:&nbsp;</strong><span><input  ng-disabled="true" ng-model="employeeData.height" class="myinput" type="text" /></span>
+                    </div>
+                    <div class="col-xs-6 text-left p0">
+                        <select ng-disabled="true">
+                            <option>Feet</option>
+                            <option>inch</option>
+                        </select>
+                    </div>
+                </li>
+                <li class="mb-sm col-xs-12 pl0 ml0">
+                    <div class="col-xs-6 text-left p0">
+                        <strong>Weight:&nbsp;</strong><span><input  ng-disabled="true" ng-model="employeeData.weight" class="myinput" type="text" /></span>
+                    </div>
+                    <div class="col-xs-6 text-left p0">
+                        <select  ng-disabled="true">
+                            <option>Kg</option>
+                            <option>Pound</option>
+                        </select>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </accordion-group>
+    <accordion-group is-open="status.isOuterSecondOpen" is-disabled="status.isOuterSecondDisabled"><!-- second accordion  -->
+        <accordion-heading>Hospital Info
+            <i class="pull-right ng-scope fa fa-chevron-down" ng-class="{'fa-chevron-down':!status.isOuterSecondOpen, 'fa-chevron-up': status.isOuterSecondOpen}"></i>
+        </accordion-heading>
+        <!--  start inner accordion -->
+
+
+        <div class="p0 m0">
+            <accordion close-others="true">
+                <accordion-group is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                    <accordion-heading>
+                    <i class="pull-left ng-scope fa fa-stethoscope"></i>
+                    Blood Preassure&nbsp;
+                    <i class="pull-right ng-scope fa fa-chevron-down" ng-class="{'fa-chevron-down':!status.isFirstOpen, 'fa-chevron-up': status.isFirstOpen}"></i>
+                    </accordion-heading>
+                     <p> accordion data</p>
+                </accordion-group>
+                
+
+                <accordion-group is-open="status.isSecondOpen" is-disabled="status.isSecondDisabled">
+                    <accordion-heading>
+                    <i class="pull-left ng-scope fa fa-eyedropper"></i>
+                    Sugar Details
+                    <i class="pull-right ng-scope fa fa-chevron-down" ng-class="{'fa-chevron-down':!status.isSecondOpen, 'fa-chevron-up': status.isSecondOpen}"></i>
+                    </accordion-heading>
+                     <p> accordion data</p>
+                </accordion-group>     
+
+
+                <accordion-group is-open="status.isThirdOpen" is-disabled="status.isThirdDisabled">
+                    <accordion-heading>
+                    <i class="pull-left ng-scope fa fa-flask"></i>
+                    Blood Report
+                    <i class="pull-right ng-scope fa fa-chevron-down" ng-class="{'fa-chevron-down':!status.isThirdOpen, 'fa-chevron-up': status.isThirdOpen}"></i>
+                    </accordion-heading>
+                     <!-- start data  -->
+                        <div class="col-lg-12">
+                        <div>
+                          <div class="col-lg-6 pt"><b>Report ID: </b>{{bloodValue.reportId}}</div>
+                          <div class="col-lg-6 text-right mt"><b>Date: </b>{{bloodValue.date}}</div>
+                        </div>
+      <!-- START panel-->
+      <div class="panel panel-default">
+         <div class="panel-heading"><b>Results</b></div>
+         <div class="panel-body">
+            <!-- START table-responsive-->
+            <div class="table-responsive">
+               <table class="table">
+                  <thead>
+                     <tr>
+                        <th>Type</th>
+                        <th>Count</th>
+                        <th>Unit</th>
+                        <th>Reference</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr ng-repeat="data in bloodReport">
+                        <td>{{data.type}}</td>
+                        <td>{{data.count}}</td>
+                        <td>{{data.unit}}</td>
+                        <td>{{data.reference}}</td>
+                     </tr>
+
+                  </tbody>
+               </table>
+            </div>
+            <!-- END table-responsive-->
+         </div>
+      </div>
+      <!-- END panel-->
+   </div>
+                     <!--  End Data -->
+                </accordion-group>                
+
+
+                <accordion-group is-open="status.isFourthOpen" is-disabled="status.isFourthDisabled">
+                    <accordion-heading>
+                   <i class="pull-left ng-scope fa fa-plus-square"></i>
+                    Urine Report
+                    <i class="pull-right ng-scope fa fa-chevron-down" ng-class="{'fa-chevron-down':!status.isFourthOpen, 'fa-chevron-up': status.isFourthOpen}"></i>
+                    </accordion-heading>
+                     <p> accordion data</p>
+                </accordion-group>                      
+            </accordion>
+        </div>
+
+
+
+
+        <!--  end inner accordion -->
+
+    </accordion-group>
+
+</accordion>
+<button type="button" ng-click="activities()" class="btn btn-primary btn-lg ml_next" style="width:80%;background-color:#656565">Next</button>
+</div>

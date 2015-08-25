@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="angle">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="{{app.description}}">
+   <meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
+   <title data-ng-bind="pageTitle()">Angle - Angular Bootstrap Admin Template</title>
+   <link rel="stylesheet" href="app/css/app.css" data-ng-if="!app.layout.isRTL">
+   <link rel="stylesheet" href="app/css/app-rtl.css" data-ng-if="app.layout.isRTL">
+   <link rel="stylesheet" href="app/css/mystyle.css">
+   <link type="text/css" rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+</head>
+
+<body data-ng-class="{ 'layout-fixed' : app.layout.isFixed, 'aside-collapsed' : app.layout.isCollapsed, 'layout-boxed' : app.layout.isBoxed, 'layout-fs': app.useFullLayout, 'hidden-footer': app.hiddenFooter, 'layout-h': app.layout.horizontal, 'aside-float': app.layout.isFloat}">
+   <div data-ui-view="" data-autoscroll="false" class="wrapper"></div>
+   <script src="app/js/base.js"></script>
+   <script src="app/js/app.js"></script>
+      <script type="text/javascript" src="https://www.moxtra.com/api/js/moxtra-latest.js" id="moxtrajs"  data-client-id="pRJHwDDzm7w"/> 
+   <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-md5.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha256.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha512.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+   <script src="app/controllers/profileController.js"></script>
+   <script src="app/controllers/loginController.js"></script>
+   <script src="app/controllers/healthrecordController.js"></script>
+   <script src="app/controllers/activitiesController.js"></script>
+   <script src="app/controllers/homeController.js"></script>      
+   <script src="app/controllers/gymDetailsController.js"></script> 
+   <script src="app/controllers/friendsandgroups.js"></script> 
+   <script src="app/controllers/createGroupController.js"></script>  
+   <script src="app/controllers/addFriendsController.js"></script>
+   <script src="app/controllers/chatPageController.js"></script>   
+   
+</body>
+
+</html>

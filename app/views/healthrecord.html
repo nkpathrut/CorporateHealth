@@ -1,0 +1,282 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<div ng-include="'app/views/partials/myHeader.html'"></div>
+<div ng-controller="healthrecordController">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+    .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #2cacde;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        < accordion close-others="false"> <accordion-group is-open="true" is-disabled="true"><!--First Accordion --> <accordion-heading>General Info <!-- <i class="pull-right ng-scope fa fa-chevron-down " > </i>ng-class="{ '
+ fa-chevron-down ': !status.isOuterFirstOpen, 'fa-chevron-up': status.isOuterFirstOpen
+
+    }
+    "
+ --> </ accordion-heading> <div class=""><!--removed col-xs-6 from here -->.arrow-down1 {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #f5535e;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mouse-pointer {
+        cursor: pointer;
+        cursor: hand;
+    }
+    </style>
+
+    <div class="bs-example bg-white">
+        <div class="panel-group bg-white" id="accordion" style="margin-bottom: 0px !important;">
+            <!-- accordion 1 start-->
+            <div class="panel panel-default m0">
+                <div class="panel-heading pt0 pb0 pb0 pt0" ng-click="toggleIcon('0')">
+                    <div class="row row-table makeGray0 bg-white" data-toggle="collapse" data-parent="#accordion" href=".collapseOne">
+                        <div class="col-xs-3 text-center" style="padding-right: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
+                            <img src="app/img/icons/blood_report.png" alt="Image" class="img-thumbnail thumb60 ">
+                        </div>
+                        <div class="col-xs-7 col-xxs-push-1" style="padding-left: 0px !important;">
+                            <p class="mt0 "  style="margin: 0 0 0.5px !important;">
+                                <font style="font-size: 2.3rem; font-style:" roboto ";">&nbspBlood
+							Report </font>
+                            </p>
+
+                            <ul class="list-unstyled" style="margin-top:-8px !important;padding-top: 2mm;font-size:1.1rem;">
+                                <li class="mb-sm"><em>&nbsp&nbspReport ID: 23304&nbsp&nbspDate 22/07/2015</em></li>
+                                <!-- <li class="mb-sm ">&nbsp&nbspDate 22/07/2015</li> -->
+
+                            </ul>
+                            <!-- <button class="btn btn-oval btn-default" style="background-color: #67BAC3; color: rgb(10, 10, 10);border-color: #25605F">View Details</button> -->
+                        </div>
+         <div class="col-xs-2 col-sm-2 pull-right"  style="font-size:2.2rem;">
+		 <img id="friendsGroupsToggleArrow" class="img-thumbnail thumb30 pull-right pt " src="app/img/icons/{{toggleBloodReportValue}}-arrow.png" alt="..." />
+		 </div><!--  data-parent="#accordion" -->
+
+                    </div>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse collapseOne bg-white">
+                    <div class="panel-body bg-gray">
+                        <!-- my content start -->
+                        <div class="col-xs-6 col-sm-6 bg-white" ng-repeat="data in bloodReport | limitTo: bloodDisplayLimit" style="border: 5px solid #dde6e9; border-right: 2.5;min-height:160px;max-height:160px;">
+                            <center class="pt">
+                                <span>{{data.type}}</span>
+                            </center>
+                            <center style="display:bloack;">
+                                <span style="font-size: 4rem;" class="text-{{data.progressStatus}} pb0 mb0">{{data.count}}</span>
+                                <div class="col-xs-12 col-sm-12 p0 m0">{{data.unit}}</div>
+                            </center>
+                            <!-- start progress -->
+                            <table class="b0 wd-wide">
+                                <tr>
+                                    <td style="font-size:1rem;padding-right:4px;" width="20%" class="text-right">{{data.reference.low}}</td>
+                                    <td style="height:8px;" width="60%">
+                                        <div class="progress col-xs-12 col-sm-12 p0 m0 " style="height:8px;">
+                                            <div class="progress-bar progress-bar-{{data.progressStatus}} col-xs-10" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{data.progress}}%;"> </div>
+                                        </div>
+                                    </td>
+                                    <td style="font-size:1rem;padding-left:4px;" width="20%">{{data.reference.high}}</td>
+                                </tr>
+                            </table>
+                            <!-- End progress -->
+                        </div>
+                        <div class="pull-right pt pr">
+                            <button id="viewMoreBloodbutton" type="button"  ng-click="viewMore('viewMoreBloodbutton')" class="btn btn-primary btn-lg ml_next" style=" background-color: #ffffff; color: #009245; border-color: #009245;font-size:2rem;">View More</button>
+                        </div>
+                        <!-- my content end -->
+                    </div>
+                </div>
+            </div>
+            <!-- accordion 1 end -->
+            <hr class="rmUnderline" >
+              <!-- accordion 2 start-->
+            <div class="panel panel-default m0">
+                <div class="panel-heading pt0 pb0" ng-click="toggleIcon('1')">
+                    <div class="row row-table makeGray1 bg-white" data-toggle="collapse" data-parent="#accordion" href=".collapseTwo">
+                        <div class="col-xs-3 text-center" style="padding-right: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
+                            <img src="app/img/icons/Suger_Details.png" alt="Image" class="img-thumbnail thumb48 ">
+                        </div>
+                        <div class="col-xs-7 col-xxs-push-1"  style="padding-left: 0px !important;">
+                            <p class="mt0 " style="margin: 0 0 0.5px !important;">
+                                <font style="font-size: 2.3rem; font-style:" roboto ";">&nbspSugar Details </font>
+                            </p>
+
+                            <ul class="list-unstyled" style="margin-top:-8px !important;padding-top: 2mm;font-size:1.1rem;">
+                                <li class="mb-sm"><em>&nbsp&nbspReport ID: 23304&nbsp&nbspDate 22/07/2015</em></li>
+                                <!-- <li class="mb-sm ">&nbsp&nbspDate 22/07/2015</li> -->
+
+                            </ul>
+                            <!-- <button class="btn btn-oval btn-default" style="background-color: #67BAC3; color: rgb(10, 10, 10);border-color: #25605F">View Details</button> -->
+                        </div>
+         <div class="col-xs-2 col-sm-2 pull-right"  style="font-size:2.2rem;">
+		 <img id="friendsGroupsToggleArrow" class="img-thumbnail thumb30 pull-right pt " src="app/img/icons/{{toggleSugarDetailsValue}}-arrow.png" alt="..." />
+		 </div><!--  data-parent="#accordion" -->
+
+                    </div>
+                </div>
+                <div id="collapse2" class="panel-collapse collapse collapseTwo bg-white">
+                    <div class="panel-body bg-gray">
+                        <!-- my content start -->
+                        <div class="col-xs-6 col-sm-6 bg-white" ng-repeat="data in bloodReport  | limitTo: sugarDisplayLimit" style="border: 5px solid #dde6e9; border-right: 2.5;min-height:160px;max-height:160px;">
+                            <center>
+                                <span>{{data.type}}</span>
+                            </center>
+                            <center style="display:bloack;">
+                                <span style="font-size: 4rem;" class="text-{{data.progressStatus}} pb0 mb0">{{data.count}}</span>
+                                <div class="col-xs-12 col-sm-12 p0 m0">{{data.unit}}</div>
+                            </center>
+                            <!-- start progress -->
+                            <table class="b0 wd-wide">
+                                <tr>
+                                    <td style="font-size:1rem;padding-right:4px;" width="20%" class="text-right">{{data.reference.low}}</td>
+                                    <td style="height:8px;" width="60%">
+                                        <div class="progress col-xs-12 col-sm-12 p0 m0 " style="height:8px;">
+                                            <div class="progress-bar progress-bar-{{data.progressStatus}} col-xs-10" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{data.progress}}%;"> </div>
+                                        </div>
+                                    </td>
+                                    <td style="font-size:1rem;padding-left:4px;" width="20%">{{data.reference.high}}</td>
+                                </tr>
+                            </table>
+                            <!-- End progress -->
+                        </div>
+                        <!-- my content end -->
+                                                <div class="pull-right pt pr">
+                            <button id="viewMoreSugarbutton" type="button"  ng-click="viewMore('viewMoreSugarbutton')" class="btn btn-primary btn-lg ml_next" style=" background-color: #ffffff; color: #009245; border-color: #009245;font-size:2rem;">View More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- accordion 2 end -->
+
+<hr class="rmUnderline" >
+              <!-- accordion 3 start-->
+            <div class="panel panel-default m0">
+                <div class="panel-heading pt0 pb0" ng-click="toggleIcon('2')">
+                    <div class="row row-table makeGray2 bg-white" data-toggle="collapse" data-parent="#accordion" href=".collapseThree">
+                        <div class="col-xs-3 text-center" style="padding-right: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
+                            <img src="app/img/icons/Blood_Pressure.png" alt="Image" class="img-thumbnail thumb48 ">
+                        </div>
+                        <div class="col-xs-7 col-xxs-push-1" style="padding-left: 0px !important;">
+                            <p class="mt0 "  style="margin: 0 0 0.5px !important;">
+                                <font style="font-size: 2.3rem; font-style:" roboto ";">&nbspBlood Pressure </font>
+                            </p>
+
+                            <ul class="list-unstyled" style="margin-top:-8px !important;padding-top: 2mm;font-size:1.1rem;">
+                                <li class="mb-sm"><em>&nbsp&nbspReport ID: 23304&nbsp&nbspDate 22/07/2015</em></li>
+                                <!-- <li class="mb-sm ">&nbsp&nbspDate 22/07/2015</li> -->
+
+                            </ul>
+                            <!-- <button class="btn btn-oval btn-default" style="background-color: #67BAC3; color: rgb(10, 10, 10);border-color: #25605F">View Details</button> -->
+                        </div>
+         <div class="col-xs-2 col-sm-2 pull-right"  style="font-size:2.2rem;">
+		 <img id="friendsGroupsToggleArrow" class="img-thumbnail thumb30 pull-right pt " src="app/img/icons/{{toggleBloodPreassureValue}}-arrow.png" alt="..." />
+		 </div><!--  data-parent="#accordion" -->
+
+                    </div>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse collapseThree bg-white">
+                    <div class="panel-body bg-gray">
+                        <!-- my content start -->
+                        <div class="col-xs-6 col-sm-6 bg-white" ng-repeat="data in bloodReport  | limitTo: preassureDisplayLimit" style="border: 5px solid #dde6e9; border-right: 2.5;min-height:160px;max-height:160px;">
+                            <center>
+                                <span>{{data.type}}</span>
+                            </center>
+                            <center style="display:bloack;">
+                                <span style="font-size: 4rem;" class="text-{{data.progressStatus}} pb0 mb0">{{data.count}}</span>
+                                <div class="col-xs-12 col-sm-12 p0 m0">{{data.unit}}</div>
+                            </center>
+                            <!-- start progress -->
+                            <table class="b0 wd-wide">
+                                <tr>
+                                    <td style="font-size:1rem;padding-right:4px;" width="20%" class="text-right">{{data.reference.low}}</td>
+                                    <td style="height:8px;" width="60%">
+                                        <div class="progress col-xs-12 col-sm-12 p0 m0 " style="height:8px;">
+                                            <div class="progress-bar progress-bar-{{data.progressStatus}} col-xs-10" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{data.progress}}%;"> </div>
+                                        </div>
+                                    </td>
+                                    <td style="font-size:1rem;padding-left:4px;" width="20%">{{data.reference.high}}</td>
+                                </tr>
+                            </table>
+                            <!-- End progress -->
+                        </div>
+                        <!-- my content end -->
+                                                <div class="pull-right pt pr">
+                            <button id="viewMorePreassurebutton" type="button"  ng-click="viewMore('viewMorePreassurebutton')" class="btn btn-primary btn-lg ml_next" style=" background-color: #ffffff; color: #009245; border-color: #009245;font-size:2rem;">View More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- accordion 3 end -->
+<hr class="rmUnderline" >
+
+              <!-- accordion 4 start-->
+            <div class="panel panel-default m0">
+                <div class="panel-heading pt0 pb0" ng-click="toggleIcon('3')">
+                    <div class="row row-table makeGray3 bg-white" data-toggle="collapse" data-parent="#accordion" href=".collapseFour">
+                        <div class="col-xs-3 text-center" style="padding-right: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
+                            <img src="app/img/icons/Urine_Report.png" alt="Image" class="img-thumbnail thumb48 ">
+                        </div>
+                        <div class="col-xs-7 col-xxs-push-1" style="padding-left: 0px !important;">
+                            <p class="mt0 "  style="margin: 0 0 0.5px !important;">
+                                <font style="font-size: 2.3rem; font-style:" roboto ";">&nbspUrine Report </font>
+                            </p>
+
+                            <ul class="list-unstyled" style="margin-top:-8px !important;padding-top: 2mm;font-size:1.1rem;">
+                                <li class="mb-sm"><em>&nbsp&nbspReport ID: 23304&nbsp&nbspDate 22/07/2015</em></li>
+                                <!-- <li class="mb-sm ">&nbsp&nbspDate 22/07/2015</li> -->
+
+                            </ul>
+                            <!-- <button class="btn btn-oval btn-default" style="background-color: #67BAC3; color: rgb(10, 10, 10);border-color: #25605F">View Details</button> -->
+                        </div>
+         <div class="col-xs-2 col-sm-2 pull-right"  style="font-size:2.2rem;">
+		  <img id="friendsGroupsToggleArrow" class="img-thumbnail thumb30 pull-right pt " src="app/img/icons/{{toggleUrineReportValue}}-arrow.png" alt="..." />
+		 </div><!--  data-parent="#accordion" -->
+
+                    </div>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse collapseFour bg-white">
+                    <div class="panel-body bg-gray">
+                        <!-- my content start -->
+                        <div class="col-xs-6 col-sm-6 bg-white" ng-repeat="data in bloodReport  | limitTo: urineDisplayLimit" style="border: 5px solid #dde6e9; border-right: 2.5;min-height:160px;max-height:160px;">
+                            <center>
+                                <span>{{data.type}}</span>
+                            </center>
+                            <center style="display:bloack;">
+                                <span style="font-size: 4rem;" class="text-{{data.progressStatus}} pb0 mb0">{{data.count}}</span>
+                                <div class="col-xs-12 col-sm-12 p0 m0">{{data.unit}}</div>
+                            </center>
+                            <!-- start progress -->
+                            <table class="b0 wd-wide">
+                                <tr>
+                                    <td style="font-size:1rem;padding-right:4px;" width="20%" class="text-right">{{data.reference.low}}</td>
+                                    <td style="height:8px;" width="60%">
+                                        <div class="progress col-xs-12 col-sm-12 p0 m0 " style="height:8px;">
+                                            <div class="progress-bar progress-bar-{{data.progressStatus}} col-xs-10" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{data.progress}}%;"> </div>
+                                        </div>
+                                    </td>
+                                    <td style="font-size:1rem;padding-left:4px;" width="20%">{{data.reference.high}}</td>
+                                </tr>
+                            </table>
+                            <!-- End progress -->
+                        </div>
+                        <!-- my content end -->
+                                    <div class="pull-right pt pr">
+                            <button id="viewMoreUrinebutton" type="button"  ng-click="viewMore('viewMoreUrinebutton')" class="btn btn-primary btn-lg ml_next" style=" background-color: #ffffff; color: #009245; border-color: #009245;font-size:2rem;">View More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- accordion 4 end -->
+<hr class="rmUnderline" >
+        </div>
+    </div>
+
+    <center><button type="button" ng-click="activities()" class="btn btn-lg ml_next" style="margin-bottom:6% !important;margin-top:5%  !important;width:95%;background-color:#ffffff;color:#009245;border-color:#009245;padding-top: 5px;margin-left: 0px !important;padding-bottom: 5px;font-size: large  !important;font-weight: bold  !important;">Next</button>
+	</center>

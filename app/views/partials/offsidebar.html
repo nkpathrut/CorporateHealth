@@ -1,0 +1,97 @@
+<!-- START Off Sidebar (left)-->
+<div style="position:relative;">    
+ <div class="row" style="position:relative;padding:0;left:0; background-color:#0d3e0f; height:70px;">
+					</div>
+<p id="name" class="inline data" style="position:absolute;color:#ffffff;margin-left:25px;margin-top:-45px;"  spellcheck="false">{{empName}}</p>
+<img class="img-circle thumb64 pull-right" style="position:absolute;margin-left:220px;margin-top:-60px;" src="app/img/user/10.jpg" alt="..." >
+       
+	<table class="table table-striped" style="margin-bottom:0;width:100%; background-color:#ffffff;">
+		 <tr ui-sref="app.home">
+		  <td class="col-sm-4"  style="vertical-align:top !important; align:center;">
+		    <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		      <img class="img-thumbnail thumb32 inline" src="app/img/Menu_icons/home.png" alt="..." style="margin-left:15px;" >
+			</a>
+		  </td>
+		  <td class="col-sm-8" style="vertical-align:top !important; align:center;">
+		    <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		      <h3 class="text-center text-thin inline" style="margin-top: 1px;">Home</h3>
+			</a>
+		  </td>
+		</tr>
+		<tr ui-sref="app.healthrecord">
+		 <td class="col-sm-4" style="vertical-align:top !important; align:center;">
+		   <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		     <img class="img-thumbnail thumb32 inline" src="app/img/Menu_icons/health.png" alt="..." style="margin-left:15px;" ></a>
+		 </td>
+		 <td class="col-sm-8" style="vertical-align:top !important; align:center;">
+		   <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		     <h3 class="text-center text-thin inline" style="margin-top: 1px;">Health</h3></a>
+		 </td>
+		</tr>
+	    <tr ui-sref="app.activities">
+		 <td class="col-sm-4" style="vertical-align:top !important; align:center;">
+		  <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		   <img class="img-thumbnail thumb32 inline" src="app/img/Menu_icons/physical_activities.png" alt="..." style="margin-left:15px;" ></a>
+		 </td>
+		 <td class="col-sm-8" style="vertical-align:top !important; align:center;">
+		  <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		   <h3 class="text-center text-thin inline" style="margin-top: 1px;">Physical Activities</h3></a>
+		 </td>
+		</tr>
+	    <tr ui-sref="app.friendsandgroups">
+		 <td class="col-sm-4" style="vertical-align:top !important; align:center;">
+		  <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		   <img class="img-thumbnail thumb32 inline" src="app/img/Menu_icons/friends_groups.png" alt="..." style="margin-left:15px;" ></a>
+		 </td>
+		 <td class="col-sm-8" style="vertical-align:top !important; align:center;">
+		  <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		    <h3 class="text-center text-thin inline" style="margin-top: 1px;">Friends & Groups</h3></a>
+		 </td>
+		</tr>
+		<tr ui-sref="#">
+		 <td class="col-sm-4" style="vertical-align:top !important; align:center;">
+		   <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;"> 
+		    <img class="img-thumbnail thumb32 inline" src="app/img/Menu_icons/future_activities.png" alt="..." style="margin-left:15px;"></a>
+		 </td>
+		 <td class="col-sm-8" style="vertical-align:top !important; align:center;">
+		  <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		   <h3 class="text-center text-thin inline" style="margin-top: 1px;">Future Activities</h3></a>
+		 </td>
+		</tr>
+	</table>
+	<hr class="rmUnderlinebold">
+	<table class="table table-striped" style="width:100%;background-color:#ffffff;">
+		<tr ui-sref="#">
+		 <td class="col-sm-4" style="vertical-align:top !important; align:center;">
+		   <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;"> 
+		   <img class="img-thumbnail thumb32 inline" src="app/img/Menu_icons/ac_setting.png" alt="..." style="margin-left:15px;" ></a>
+		 </td>
+		 <td class="col-sm-8" style="vertical-align:top !important; align:center;">
+		   <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;"> 
+		   <h3 class="text-center text-thin inline" style="margin-top: 1px;">Account Setting</h3></a>
+		 </td>
+		</tr>
+		<tr ui-sref="app.profile">
+		 <td class="col-sm-4" style="vertical-align:top !important; align:center;">
+		   <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;"> 
+		    <img class="img-thumbnail thumb32 inline" src="app/img/Menu_icons/my_profile.png" alt="..." style="margin-left:15px;" ></a>
+		 </td>
+		 <td class="col-sm-8" style="vertical-align:top !important; align:center;">
+		   <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		   <h3 class="text-center text-thin inline" style="margin-top: 1px;">My Profile</h3></a>
+	     </td>
+		</tr>
+		<tr ng-click="logoutUser()">
+		 <td class="col-sm-4" style="vertical-align:top !important; align:center;">
+		   <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		   <img class="img-thumbnail thumb32 inline" src="app/img/Menu_icons/logout.png" alt="..." style="margin-left:15px;" ></a>
+		 </td>
+		 <td class="col-sm-8" style="vertical-align:top !important; align:center;">
+		  <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		   <h3 class="text-center text-thin inline" style="margin-top: 1px;">Logout</h3></a>
+		 </td>
+		</tr>		
+	</table>
+</div>
+
+<!-- END Off Sidebar (right)-->

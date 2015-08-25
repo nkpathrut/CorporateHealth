@@ -1,0 +1,71 @@
+.myinput {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid black;
+    width: 20px;
+}
+.groupNameEdit{
+color:#585858;
+font-size:100%;
+padding-top: 2px;
+    padding-bottom: 2px;
+font-weight:none;
+font-family: Roboto;
+}
+.peopleSearch{
+color:#585858;
+font-size:100%;
+font-weight:none;
+font-family: Roboto;
+border-color:#b8b8b8;
+height: 25px;
+}
+.btn-non_select{
+  color: #8C8C8C;
+  background-color: #cccccc;
+  border-color: #cccccc;
+}
+
+ #abc {
+width:100%;
+height:100%;
+opacity:.97;
+top:0;
+left:0;
+display:none;
+position:fixed;
+background-color:#313131;
+overflow:auto
+}
+img#close {
+position:absolute;
+right:-34px;
+top:15px;
+cursor:pointer
+}
+div#popupContact {
+position:absolute;
+left:50%;
+top:17%;
+margin-left:-202px;
+font-family:roboto
+}
+form.myform {
+max-width:300px;
+min-width:250px;
+padding:10px 50px;
+border:2px solid gray;
+border-radius:10px;
+font-family:raleway;
+background-color:#fff
+}
+
+h2.header {
+font-weight:normal;
+background-color:#0d3e0f;
+padding:20px 35px;
+margin:-10px -50px;
+text-align:center;
+border-radius:10px 10px 0 0
+}
