@@ -20,6 +20,7 @@ App
 											var clickedObject=$scope.physicalActivities[index];
 											var obj={
 												    "empId" : $rootScope.empID,
+												    "actionNeeded" : "add",
 												    "activity" : 
 												    {
 												        "activityId" : clickedObject.activityId,
@@ -50,8 +51,36 @@ App
 										else if(element.iconClass=="fa fa-star")
 										{
 											element.iconClass="icon-star"
-										//	alert('delete');
-										 //call api for delete
+												var clickedObject=$scope.physicalActivities[index];
+											var obj={
+												    "empId" : $rootScope.empID,
+												    "actionNeeded" : "delete",
+												    "activity" : 
+												    {
+												        "activityId" : clickedObject.activityId,
+												        "activityName" : clickedObject.activityName
+												    }
+												};
+							            	var req = {
+							            			 method: 'PUT',
+							            			 url: basePath+'/activities?employee_id='+$rootScope.empID,
+							            			 headers: 
+							            			 {
+							            				 'Access-Control-Allow-Origin': '*',
+							            				 'Access-Control-Allow-Headers': 'Content-Type',
+							            				 'Content-Type': 'application/json'
+							            			 },
+							            			 data: obj
+							            			}
+							            	// Sending Data To Server :
+							            	$http(req).
+							            	  then(function(response) {
+							            		  location.reload();
+							            	  }, function(response) {
+			                                           alert(JSON.stringify('Error:-'+response));
+							            	  });							
+
+												
 										}										
 									//	angular.element(event.target).toggleClass("icon-star fa-star");
                                         
