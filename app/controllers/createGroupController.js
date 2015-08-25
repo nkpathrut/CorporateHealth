@@ -7,6 +7,16 @@ App
 						'$http',
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
+						
+						$scope.div_show=function(friend) {
+								 //alert(JSON.stringify(friend));
+								document.getElementById('xyz').style.display = "block";
+								}
+								
+								//Function to Hide Popup
+								$scope.div_hide=function(){
+								document.getElementById('xyz').style.display = "none";
+								}
 					      //alert("create groups"); 
 							$scope.status1=false;
 							$scope.status2=false;

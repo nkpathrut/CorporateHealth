@@ -104,8 +104,8 @@
 					<img class="img-circle thumb90 " style="margin-top: 5px; !important" src="app/img/user/10.jpg" alt="..." >
 				</div>	
 				<div class="col-xs-8 inline pt15" style="padding-right: 0px !important;padding-left: 20px !important;" >
-						<div  style="color:#ffffff;font-family: roboto; font-size:20px;" >Mayank Senani</div>
-						<div   style="color:#7ac943;font-family: roboto; font-size:15px; margin-top: 5px; ">EMPOYEE ID 017902</div>  
+						<div  style="color:#ffffff;font-family: roboto; font-size:20px;" >{{selectedFriend.employeeName}}</div>
+						<div   style="color:#7ac943;font-family: roboto; font-size:15px; margin-top: 5px; ">EMPOYEE ID {{selectedFriend.employeeId}}</div>  
 				</div>
 			</div>	
 			</h2>
@@ -115,19 +115,19 @@
                    <tbody>
                      <tr>
                         <td class="row-sm-12" ><p1 id="taddress" class="inline subTitle ">Official Tel. No:</p1><br/>
-						<p1 id="address" class="form-control-static inline data " style="padding-top: 0px !important;" spellcheck="false">022-2655588</p1>
+						<p1 id="address" class="form-control-static inline data " style="padding-top: 0px !important;" spellcheck="false">{{selectedFriend.tel}}</p1>
 						<hr class="rmUnderline" >
 						</td>
                      </tr>
 					 <tr>
                         <td class="row-sm-12"><p1 id="taddress" class="inline subTitle ">Mobile No:</p1><br/>
-						<p1 id="address" class="form-control-static inline data " style="padding-top: 0px !important;" spellcheck="false">9222244444</p1>
+						<p1 id="address" class="form-control-static inline data " style="padding-top: 0px !important;" spellcheck="false">{{selectedFriend.mobile}}</p1>
 						<hr class="rmUnderline" >
 						</td>
                      </tr>
 					 <tr>
                         <td class="row-sm-12"><p1 id="taddress" class="inline subTitle ">Email ID:</p1><br/>
-						<p1 id="address" class="form-control-static inline data"  style="width: 16em; word-wrap: break-word; padding-top: 0px !important;" spellcheck="false">mayank_senani@persistent.co.in</p1>
+						<p1 id="address" class="form-control-static inline data"  style="width: 16em; word-wrap: break-word; padding-top: 0px !important;" spellcheck="false">{{selectedFriend.emailId}}</p1>
 						<hr class="rmUnderline" >
 						</td>
                      </tr>
@@ -138,3 +138,4 @@
 </div>
 <!-- Popup Div Ends Here -->
 </div>
+<div id="xyz" toggle-state="offsidebar-open" ng-click="div_hide()"></div> 

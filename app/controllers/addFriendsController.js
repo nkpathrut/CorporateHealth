@@ -7,11 +7,20 @@ App
 						'$http',
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
+						$scope.div_show=function(friend) {
+								 //alert(JSON.stringify(friend));
+								document.getElementById('abc').style.display = "block";
+								}
+								
+								//Function to Hide Popup
+								$scope.div_hide=function(){
+								document.getElementById('abc').style.display = "none";
+								}
 							
 							//Function To Display Popup
 								 $scope.div_show=function(friend) {
-								 alert(JSON.stringify(friend));
-								document.getElementById('abc').style.display = "block";
+								    $scope.selectedFriend=friend;
+									document.getElementById('abc').style.display = "block";
 								}
 								
 								//Function to Hide Popup
@@ -134,7 +143,11 @@ App
 										  var obj=
 										  {
 												  employeeId:data[i].empID,
+												  emailId:data[i].emailID,
+												  mobile:data[i].contactNumbers.home,
+												  tel:data[i].contactNumbers.mobile,
 												  employeeName:data[i].empName.firstName+" "+data[i].empName.lastName,
+												  
 												  showAdd:false
 										  };
 										  formatted_employees.push(obj);
