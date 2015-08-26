@@ -1,33 +1,27 @@
 App
 		.controller(
-				'homeController',
+				'futureActivitiesController',
 				[
 						'$scope',
 						'$state',
 						'$http',
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
-					        /* $(function() {
-					             $( "#accordion-1" ).accordion();
-					          });*/
-							
-							//alert("healthController Controller");
-							
-							$scope.div_show_bg=function(friend) {
+						
+						$scope.div_show_bg=function(friend) {
+								 //alert(JSON.stringify(friend));
 								document.getElementById('xyz').style.display = "block";
 								}
 								
-								//Function to Hide bg
+								//Function to Hide Popup
 								$scope.div_hide_bg=function(){
 								document.getElementById('xyz').style.display = "none";
 								}
-							
-							$scope.home=function(){ 
-									//$rootScope.changeState('app.activities');
-									}
+					    
 									
+
 							var init = function () {
-								$rootScope.app.pageTitle="Home";
+								$rootScope.app.pageTitle="Future Activities";
 							};
 							init();									
 						} ]);

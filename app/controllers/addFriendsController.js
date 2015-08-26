@@ -7,14 +7,13 @@ App
 						'$http',
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
-						$scope.div_show=function(friend) {
-								 //alert(JSON.stringify(friend));
-								document.getElementById('abc').style.display = "block";
+						$scope.div_show_bg=function(friend) {
+								document.getElementById('xyz').style.display = "block";
 								}
 								
-								//Function to Hide Popup
-								$scope.div_hide=function(){
-								document.getElementById('abc').style.display = "none";
+								//Function to Hide bg
+								$scope.div_hide_bg=function(){
+								document.getElementById('xyz').style.display = "none";
 								}
 							
 							//Function To Display Popup

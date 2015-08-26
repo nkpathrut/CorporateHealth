@@ -5,6 +5,16 @@ App
         '$http',
         '$rootScope',
         function($scope, $state, $http, $rootScope) {
+			
+							$scope.div_show_bg=function(friend) {
+								document.getElementById('xyz').style.display = "block";
+								}
+								
+								//Function to Hide bg
+								$scope.div_hide_bg=function(){
+								document.getElementById('xyz').style.display = "none";
+								}
+		
         	if($rootScope.empID==undefined)
         	 {
         		$rootScope.changeState('login');

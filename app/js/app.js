@@ -209,6 +209,26 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
 		controller : 'chatPageController'
 		//resolve: helper.resolveFor('jquery-ui', 'jquery-ui-widgets')
 	})	
+	
+	.state('app.futureactivities',
+	{
+		url : '/futureactivities',
+		templateUrl :  helper
+		.basepath('futureactivities.html'),
+		controller : 'futureActivitiesController'
+		//resolve: helper.resolveFor('jquery-ui', 'jquery-ui-widgets')
+	})		
+	
+	
+	.state('app.setting',
+	{
+		url : '/setting',
+		templateUrl :  helper
+		.basepath('setting.html'),
+		controller : 'settingController'
+		//resolve: helper.resolveFor('jquery-ui', 'jquery-ui-widgets')
+	})	
+	
     // 
     // CUSTOM RESOLVES
     //   Add your own resolves properties
