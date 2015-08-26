@@ -35,10 +35,11 @@ var App = angular.module('angle', ['ngRoute', 'ngAnimate', 'ngStorage', 'ngCooki
             	  $rootScope.changeState('login');
           	};          	
           	var userInfo = angular.fromJson($rootScope.$storage['userInfo']);
-          	if(userInfo!=undefined)
+          	if(userInfo!=undefined || userInfo.empID!=undefined)
     	    {
 			 $rootScope.empID=angular.copy(userInfo.empID);
 			 $rootScope.empName=angular.copy(userInfo.empName.firstName+" "+userInfo.empName.lastName);
+			 $rootScope.emailId=angular.copy(userInfo.emailID);
 			}
           	else
           		 $rootScope.changeState('login');
