@@ -1,19 +1,19 @@
 <!-- START Off Sidebar (left)-->
 <div style="position:relative;">    
- <div class="row" style="position:relative;padding:0;left:0; background-color:#0d3e0f; height:70px;">
+ <div class="row" toggle-state="offsidebar-open"  style="position:relative;padding:0;left:0; background-color:#0d3e0f; height:70px;">
 					</div>
-<p id="name" class="inline data" style="position:absolute;color:#ffffff;margin-left:25px;margin-top:-45px;"  spellcheck="false">{{empName}}</p>
-<img class="img-circle thumb64 pull-right" style="position:absolute;margin-left:220px;margin-top:-60px;" src="app/img/user/10.jpg" alt="..." >
+<p id="name" class="inline data" style="position:absolute;color:#ffffff;margin-left:25px;margin-top:-45px;" toggle-state="offsidebar-open"   spellcheck="false">{{empName}}</p>
+<img class="img-circle thumb64 pull-right" style="position:absolute;margin-left:220px;margin-top:-60px;" toggle-state="offsidebar-open"  src="app/img/user/10.jpg" alt="..." >
        
 	<table class="table table-striped" style="margin-bottom:0;width:100%; background-color:#ffffff;">
-		 <tr ui-sref="app.home">
+		 <tr ui-sref="app.home" toggle-state="offsidebar-open" ng-click="div_hide()" >
 		  <td class="col-sm-4"  style="vertical-align:top !important; align:center;">
-		    <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		    <a href="#"  no-persist="no-persist" style="color:black;">
 		      <img class="img-thumbnail thumb32 inline" src="app/img/Menu_icons/home.png" alt="..." style="margin-left:15px;" >
 			</a>
 		  </td>
 		  <td class="col-sm-8" style="vertical-align:top !important; align:center;">
-		    <a href="#" toggle-state="offsidebar-open" no-persist="no-persist" style="color:black;">
+		    <a href="#"  no-persist="no-persist" style="color:black;">
 		      <h3 class="text-center text-thin inline" style="margin-top: 1px;">Home</h3>
 			</a>
 		  </td>
