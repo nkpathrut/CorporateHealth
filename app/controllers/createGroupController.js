@@ -141,6 +141,7 @@ App
 				            	          var employeeName= response[i].employeeName;
 				            	          var activityName= response[i].activityName;
 				            	          
+				            	          
                                          var obj=
                                        	   {
                                        		  employeeId:employeeId,
@@ -166,7 +167,7 @@ App
 										  var obj=
 										  {
 												  employeeId:data[i].empID,
-												  emailId:data[i].emailID,
+												  emailID:data[i].emailID,
 												  mobile:data[i].contactNumbers.home,
 												  tel:data[i].contactNumbers.mobile,
 												  employeeName:data[i].empName.firstName+" "+data[i].empName.lastName,
@@ -186,6 +187,7 @@ App
                                	    	{                                
                                	    	 if((employees[i].employeeId==$scope.friends[j].employeeId)   )
                                	    		 {
+                             	    		   $scope.friends[j].emailID=employees[i].emailID;                               	    		  
                                	    		   employees.splice(i, 1);
                                	    		   --i;
                                	    		   break;
@@ -206,51 +208,61 @@ App
 					            }
 					            
 					            
-					            
+					            //function for adding group
 					            $scope.addGroup=function()
 					            {
+					            	alert('dfdfdf');
 					            	if($scope.selectedActivity==-1)
 					            		return;
-					            	var groups=[];
+					            	var members=[];
 					            	for(var i=0;i<$scope.employees.length;i++)
 					                 {
 					            		if($scope.employees[i].showAdd==true)
 					            			{
-					            			 friends.push($scope.employees[i]);
-					            			 $scope.employees[i].activityName=$scope.selectedActivity;
+					            			 members.push($scope.employees[i]);
 					            			 delete  $scope.employees[i].showAdd;
+					            			 if($scope.employees[i].activityName!=null)
+					            			 delete  $scope.employees[i].activityName;
 					            			}
 					                 }
                                     
 					            	
 					            	for(var i=0;i<$scope.friends.length;i++)
 					                 {
-					            		if($scope.employees[i].showAdd==true)
+					            		if($scope.friends[i].showAdd==true)
 					            			{
-					            			 friends.push($scope.employees[i]);
-					            			 $scope.employees[i].activityName=$scope.selectedActivity;
-					            			 delete  $scope.employees[i].showAdd;
-					            			}
-					                 }
-					            	
-					            	friends={friends:friends};
+					            			 members.push($scope.friends[i]);
+					            			  delete  $scope.friends[i].showAdd;
+					            			 if($scope.friends[i].activityName!=null)
+					            			  delete  $scope.friends[i].activityName;
+					            			}					            		
+					                 }					            						            
+					            	members={members:members};
+					            	alert($scope.selectedGroup);
+			            			var groupObj={
+				            				  "groupName" : $scope.selectedGroup,
+				            				  "emailID" : $rootScope.emailId,
+				            				  "groupActivity" :$scope.selectedActivity,
+				            				  "members" :members
+				            				 };
+				            				 
+			            			alert(JSON.stringify(groupObj));
 					            	//alert(JSON.stringify(friends));
 					            	var req = {
 					            			 method: 'PUT',
-					            			 url: basePath+'/employees/'+$rootScope.empID+'/friends',
+					            			 url: basePath+'/groups?employee_id='+$rootScope.empID,
 					            			 headers: {
 					            				 'Access-Control-Allow-Origin': '*',
 					            				 'Access-Control-Allow-Headers': 'Content-Type',
-					            				 //'Access-Control-Allow-Headers':'Origin, X-Requested-With, Content-Type, Accept',
-					            				
-					            				 'Content-Type': 'application/json'
+					            				 //'Access-Control-Allow-Headers':'Origin, X-Requested-With, Content-Type, Accept',					            				
+					            				 'Content-Type': 'application/json'					            					 
 					            			 },
-					            			 data: friends
+					            			 data: groupObj
 					            			}
 					            	// Sending Data To Server :
 					            	$http(req).
 					            	  then(function(response) {
-                                           // alert('added successfully');
+                                            alert('added successfully');
 					            	  }, function(response) {
 	                                           alert(JSON.stringify(response));
 					            	  });
