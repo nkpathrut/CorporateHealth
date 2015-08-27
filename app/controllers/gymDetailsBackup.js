@@ -15,15 +15,9 @@ App
 							        .prev('.panel-heading')
 							        .find("i.indicator")
 							        .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
-							    console.log( $(e.target));
-							    $(e.target)
-						      //  .prev('.panel-heading')
-						       // .find("div.indicator")
-						        .toggleClass('bg-white bg-gray');
 							}
 							$('#accordion').on('hidden.bs.collapse', toggleChevron);
-							$('#accordion').on('shown.bs.collapse', toggleChevron);
-		
+							$('#accordion').on('shown.bs.collapse', toggleChevron);			
 							$scope.gymDetails=
 								[
 								 {

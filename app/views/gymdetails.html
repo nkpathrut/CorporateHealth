@@ -1,57 +1,101 @@
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
 
 <header ng-include="'app/views/partials/myHeader.html'" class=" mt0 pt0"></header>
 
-<div class="panel bg-gray mb0" >
 
-    
-   <div class="panel-body pl0 pr0 ml0 mr0 pt0 pb0" id="gymDetailsAccordion" >
-      <!-- start table -->
-      <div class="col-xs-12 pl0 pr0 ml0 mr0">
-         <!-- START panel-->
-         <div class="panel panel-default b0 mb0">
-            <!--   <div class="panel-heading">Basic Table</div>-->
-            <div class="panel-body pl0 pr0 ml0 mr0 pt0 pb0">
-               <!-- START table-responsive-->
-               <div class="table-responsive pl0 pr0 ml0 mr0 mb0">
-                  <table class="table b0 pl0 pr0 ml0 mr0" style="border-collapse: seperate;">
-                  <thead>
-                     <tr style="font-size:2rem;">
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th colspan="2">Calories Burnt</th>
-                        
-                     </tr>
-                  </thead>
-                     <tbody>
-                        <tr class="bg-white" id="gymDetailsHeader{{pIndex}}" ng-click="toggleColor(pIndex)" style="pading-top:40px;margin-top:40px;font-size:2rem;border-bottom: 2px solid black;" data-parent="#gymDetailsAccordion" data-toggle="collapse" href=".gymDetailsAccordion{{pIndex}}"  ng-repeat-start="(pIndex, data) in activityDetails | limitTo:4">
-                           <td  class="col-xs-5 b0">{{data.date | date:'dd-MM-yyyy'}}</td>
-                           <td  class="col-xs-2 pt b0">{{data.time}} min</td>
-                           <td  class="col-xs-2 pt b0">{{data.caloriesBurnt==0?100:data.caloriesBurnt}} lbs</td>
-                           <td  class="col-xs-3 pt b0" ><i id="toggleIcon{{pIndex}}" class="indicator glyphicon glyphicon-chevron-down pull-right pr mr"></i></td>
-                        </tr>
-                        <tr class="gymDetailsAccordion{{pIndex}} panel-collapse collapse bg-gray " ng-repeat="(cIndex, innerData) in data.subActivities track by cIndex"  style="border-bottom: 2px solid black;">                        
-                           <td  class="col-xs-5  b0">{{innerData.subActivityName}}</td>
-                           <td  class="col-xs-2 pt b0">{{innerData.time}} min</td>
-                           <td colspan="2" class="col-xs-5 pt b0">{{innerData.caloriesBurnt}} lbs</td>                                
-                        </tr>
-                        <tr ng-repeat-end="" class="gymDetailsAccordion{{pIndex}} panel-collapse collapse bg-gray " style="pading-top:40px;margin-top:40px;font-size:1.5rem;border-bottom: 2px solid black;">
-                         <td class="col-xs-4">Weight Loss<div class="col-xs-12 p0 text-bold mt6 b0">0.1Kg</div></td>
-                         <td class="col-xs-4">Total<div class="col-xs-12 p0 text-bold mt6 b0">54.9 kg</div></td>
-                         <td class="col-xs-4" colspan="2">Calories Burnt<div class="col-xs-12 p0 text-bold mt6 b0">{{data.caloriesBurnt==0?100:data.caloriesBurnt}} lbs</div></td>
-                       </tr>
-                     
-                     </tbody>
-                  </table>
-               </div>
-               <!-- END table-responsive-->
-            </div>
-         </div>
-         <!-- END panel-->
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group p0 m0 b0 bg-gray" id="accordion">
+  <div class="panel panel-default p0 m0 b0" >
+    <div class="panel-heading p0 m0 b0">
+      <div class="panel-title p0 m0 b0">
+        <div class="accordion-toggle col-xs-12 p0 m0 b0 bg-gray" data-toggle="collapse" data-parent="#accordion" href=".collapseOne" ng-disabled="true">
+                      <div style="font-size:1.7rem;padding-top:8px;padding-bottom:30px !important;" class="bg-white pl">
+                        <span class="col-xs-4 pl0">Date</span>
+                        <span class="col-xs-3 pl0">Time</span>
+                        <span class="col-xs-5 pl0">Calories Burnt</span>                       
+                     </div>
+        </div>
+       <!--  <i class="indicator glyphicon glyphicon-chevron-down   col-xs-2"></i> -->
       </div>
-      <!-- end table -->
-   </div>
+    </div>
+
+   <!--  <div id="collapseOne" class="panel-collapse collapse collapseOne col-xs-12">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+     -->
+  </div>
+  <!-- End Accordion 1 -->
+  <div class="panel panel-default p0 m0 b0" ng-repeat="(pIndex, data) in activityDetails | limitTo:4">
+    <div class="panel-heading p0 m0 b0">
+      <h4 class="panel-title p0 m0 b0">
+        <div class="accordion-toggle col-xs-12 p0 m0 b0 bg-gray" data-toggle="collapse" data-parent="#accordion" href=".collapse{{pIndex}}" ng-disabled="true">
+                      <div style="font-size:1.6rem;padding-top:8px;padding-bottom:30px !important;" class="bg-white pl changeColor"><!-- change class here -->
+                        <span class="col-xs-4 pl0">{{data.date | date:'dd-MM-yyyy'}}</span>
+                        <span class="col-xs-3 pl0">{{data.time}} min</span>
+                        <span class="col-xs-3 pl0">{{data.caloriesBurnt==0?100:data.caloriesBurnt}} lbs</span>   
+                        <i class="indicator glyphicon glyphicon-chevron-down  col-xs-2 "></i>                    
+                     </div>
+        </div>         
+      </h4>
+    </div>
+
+   <div id="collapse{{pIndex}}" class="panel-collapse collapse collapse{{pIndex}} col-xs-12 p0 m0 b0">
+      <div class="panel-body pl0 pr0 pt0 m0 b0" >
+         <!-- start repeat here -->
+                      <div style="font-size:1.6rem;padding-top:8px;padding-bottom:30px !important;" class="bg-gray pl" ng-repeat="(cIndex, innerData) in data.subActivities track by cIndex">
+                        <span class="col-xs-4 pl0">{{innerData.subActivityName}}</span>
+                        <span class="col-xs-3 pl0">{{innerData.time}} min</span>
+                        <span class="col-xs-5 pl0">{{innerData.caloriesBurnt}}</span>                       
+                     </div>         
+                     
+                     <div style="font-size:1.2rem;padding-top:8px;padding-bottom:30px !important;background-color:#b8b8b8;" class=" pl col-xs-12" >
+                        <span class="col-xs-5 pl0"><span class="p0 col-xs-12" style="color:#dde6e9;">Weight Loss</span><span style="font-weight: bold;" class="col-xs-12 p0">0.1 Kg</span></span>
+                        <span class="col-xs-3 pl0"><span class="p0 col-xs-12">Total</span><span style="font-weight: bold;" class="col-xs-12 pl0">54.9 Kg</span></span>
+                        <span class="col-xs-4 pl0"><span class="p0 col-xs-12">Calories Burnt</span><span  style="font-weight: bold;" class="col-xs-12 p0">{{data.caloriesBurnt==0?100:data.caloriesBurnt}} lbs</span></span>                       
+                     </div>    
+      </div>
+    </div>  
+  </div>
+  <!-- End Accordion 2  -->
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <center>
 <div class="bg-gray col-xs-12 " style="height:100px;width:100%;">
 <button type="button" ng-click="activities()" class="btn btn-success btn-lg ml_next" style="margin-bottom: 0%;margin-bottom:0%; margin-top: 25px; width: 80%;  border-color: #009245;font-size:2rem;">View More</button>
