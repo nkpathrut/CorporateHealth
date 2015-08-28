@@ -8,6 +8,14 @@ App
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
 
+						
+						$(function() {
+									$('#healthrecordController').slimScroll({
+										height:($rootScope.window_height-51),
+										width:$rootScope.window_width
+									});
+								});
+								
 							$scope.div_show_bg=function(friend) {
 								document.getElementById('xyz').style.display = "block";
 								}

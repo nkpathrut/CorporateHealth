@@ -7,7 +7,14 @@ App
 						'$http',
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
-																	
+								
+								$(function() {
+									$('#ProfileController').slimScroll({
+										height:($rootScope.window_height-140),
+										width:$rootScope.window_width
+									});
+								});
+								
 								$scope.div_show_bg=function(friend) {
 								 //alert(JSON.stringify(friend));
 								document.getElementById('xyz').style.display = "block";

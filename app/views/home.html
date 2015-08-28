@@ -1,124 +1,271 @@
-<header ng-include="'app/views/partials/myHeader.html'" class=" mt0 pt0"></header>
-<!-- <div class="col-lg-12" style="padding-left:6%;padding-right:6%;padding-top:2%;"> -->
-<div ng-controller="healthrecordController" class="bg-gray">
-	<!-- START List group-->
-	<div class="list-group pt"
-		style="padding-left: 4%; padding-right: 4%; padding-top: 5%; margin-bottom: 10px;">
-		<li class="list-group-item"
-			style="min-height: 150px; max-height: 150px;">
-			<div class="row row-table pt-lg">
-				<div class="col-xs-8" style="margin-top: 7%">
-					<p class="m2 text-update-weight">Last Captured Weight</p>
-					<p class="m2 lead_update_weight">6:00 PM | Date: 05/08/2015</p>
-				</div>
-				<div class="col-xs-4 " align="center" style="margin-top: 5%">
-					<p class="minus20 text-xlg ">67</p>
-					<p class="m_kg lead_kg">Kg</p>
-				</div>
-			</div>
-		</li>
-	</div>
-
-	<div class="list-group"
-		style="padding-left: 4%; padding-right: 4%; margin-bottom: 10px;">
-		<li class="list-group-item"
-			style="min-height: 150px; max-height: 150px;">
-			<div class="row row-table ">
-				<div class="col-xs-12">
-					<p style="margin: 0 0 5.5px !important;" class="mb-sm text-md ol"
-						align="center">My Schedule
-					<hr class="rmUnderline">
-					</p>
-				</div>
-				<div class="col-xs-4">
-					<p class="m2 text-update-weight">GYM</p>
-					<p class="m2 text-update-weight">Walking</p>
-					<p class="m2 text-update-weight">Running</p>
-				</div>
-				<div class="col-xs-8" align="right">
-					<p class="m2 lead_update_weight">6:00 AM | Date: 05/08/2015</p>
-					<p class="m2 lead_update_weight">7:00 AM | Date: 05/08/2015</p>
-					<p class="m2 lead_update_weight">8:00 PM | Date: 05/08/2015</p>
-				</div>
-			</div>
-		</li>
-	</div>
-
-	<div class="list-group pb mb0"
-		style="padding-left: 4%; padding-right: 4%; margin-bottom: 10px;">
-		<li class="list-group-item"
-			style="min-height: 150px; max-height: 150px;&gt;
-            &lt;div class="
-			rowrow-table ">
-			<div class="col-xs-12 mb-sm">
-				<p class="text-md ol" style="margin: 0 0 5.5px !important;"
-					align="center">Upcoming Activities
-				<hr class="rmUnderline">
-				</p>
-			</div>
-			<div class="col-xs-4">
-				<p class="m2 text-update-weight">Trekking</p>
-				<p class="m2 text-update-weight">Boating</p>
-			</div>
-			<div class="col-xs-8" align="right">
-				<p class="m2 lead_update_weight">7:00 AM | Date: 05/08/2015</p>
-				<p class="m2 lead_update_weight">6:00 PM | Date: 05/08/2015</p>
-			</div>
-	</div>
-	</li>
+<div ui-content-for="title">
+   <span><img class="logo" src="images/logo.png" />&nbsp;&nbsp;Educon 2015</span>
+</div>
+<div ui-content-for="back">
+	<a href="#/" class="back_href"><img src="images/back.png"/>Back</a>
 </div>
 
-<div class="list-group bg-gray pb"
-	style="padding-left: 4%; padding-right: 4%; margin-bottom: 10px;">
-	<li class="list-group-item"
-		style="min-height: 150px; max-height: 150px;&gt;
-            &lt;div class="
-		rowrow-table" >
-		<div class="col-xs-12 mb-sm">
-			<p class="text-md ol" align="center"
-				style="margin: 0 0 5.5px !important;">B.M.I. Scale
-			<hr class="rmUnderline" style="margin-bottom: 40px;" />
-			</p>
-		</div>
-		<br/><br/><br/><br/><br/>
-		
-		<div class="row row-table " style="padding-top: 20px !important;">
-	<div class="col-xs-12 mb-sm">
-		<div
-			style="margin-left: -40px; position: absolute; margin-top: -55px; padding-left: 65%;">
-			<div class="label"
-				style="font-size: 100%; color: #27c24c; font-weight: bold; margin-left: -15px; position: absolute; margin-top: 12px; padding-left: 50%;">
-				19.5</div>
-			<i class="fa icon-drop fa-rotate-180"
-				style="color: #b8b8b8; font-size: 400%"></i>
-		</div>
-		<div class="progress">
-			<!--   <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="20"
-			  aria-valuemin="0" aria-valuemax="30" style="width:50%"> </div> -->
-			<div class="progress-bar progress-bar-danger" role="progressbar"
-				style="width: 55%">Under Weight</div>
-			<div class="progress-bar progress-bar-success" role="progressbar"
-				style="width: 25%">Normal</div>
-			<div class="progress-bar progress-bar-danger" role="progressbar"
-				style="width: 20%">Over</div>
-		</div>
-	</div>
+<div class="scrollable"> 
+
+	<div class="scrollable-header"> 
+		<div class="section title_section past_title"><img class="title_icon" src="images/past_event_icon.png" />PAST EVENTS</div>
+        <div class='section tab_title past_events_tab'>
+            <ui-state id='activeTab' default='1'></ui-state>
+
+            <div class="btn-group justified nav-tabs reportdiv">
+                <a ui-set="{'activeTab': 1}" ui-class="{'activeTab': activeTab == 1}">2012</a>
+
+                <a ui-set="{'activeTab': 2}" ui-class="{'activeTab': activeTab == 2}">2013</a>
+
+                <a ui-set="{'activeTab': 3}" ui-class="{'activeTab': activeTab == 3}">2014</a>
+            </div>
+        </div>
+      </div>
+
+    <div class="scrollable-content">
+
+        
+
+        <div ui-if="activeTab == 1" class="tab_info">
+            <div class="page-header"><img src="images/pastEvent/pastEvent2012.jpg" /></div>
+            <p><strong>Theme: </strong>‘Road map for inclusive growth of the nation’</p>
+            <p>
+              Shanghai, the city which is paving way to China’s glorious future bore witness to Educon 2012. Sixty educationists from India 
+              attended the event to discuss 'Innovative Education Practices in Universities – The road map for inclusive growth of the nation’
+              which was the year’s theme for Educon. 
+            </p>
+
+            <p>
+                The most significant section of the Educon event was the visit to the Shanghai Technology Innovation Center (STIC). 
+                A non-profit public Institution under the direct leadership of S&T Commission of Shanghai Municipality, STIC was established 
+                in April, 1988 and is devoted to transferring technology achievements, incubating technology enterprises, and cultivating
+                technology entrepreneurs. The Centre strives to build an excellent innovation environment to provide comprehensive services
+                to technology enterprises and innovators for the commercialization, industrialization and internationalization of hi-tech 
+                technology achievements. The delegates were able to comprehend superior methods and approaches of the teaching and learning 
+                experience and were able to explore the various ways our education system can be transformed.
+            </p>
+            
+
+             <div class="col-md-12 action_btn">
+					<a class="btn btn-default past_events_btn btn_raised" href="#/pastPapers">
+					<span ><img src="images/past_paper.png" /></span>
+					<span class="action_text">READ PAST PAPERS</span>
+					</a>
+			  </div>
+            <br>
+            </a>
+        </div>
+
+        <div ui-if="activeTab == 2" class="tab_info">
+            <div class="page-header"><img src="images/pastEvent/pastEvent2013.JPG" style="widht:100%" /></div>
+            <p><strong>Theme: </strong>‘Transformation for Excellence through Best Practices in building a University’</p>
+            <p>
+              Istanbul (Turkey), the city of seven hills, is a blissful blend of cultures from the west and the east,
+              and to our great joy served as the home for Sakal Educon, 2013. Sixty educationists from all over India were 
+              present in the event and discussed the year’s theme, ‘Transformation for Excellence through Best Practices in building a 
+              University’. 
+            </p>
+            
+            <p>
+              During the event, the delegates had an opportunity to visit the ‘Istanbul Technical University’. 
+              The theme was bifurcated into the following 7 sub topics: Academic Leadership, Financial Models for Universities, Research 
+              and Innovation, Academics, Technology and Education, Infrastructure, and Bridging Academia-Industry gap. Many intellectual 
+              figures including Principals of prestigious Institutions like IIT and Vice Chancellors of leading Central as well as State 
+              Universities graced the occasion with their presence.
+            </p>
+
+            <div class="col-md-12 action_btn">
+					<a class="btn btn-default past_events_btn btn_raised" href="#/pastPapers">
+					<span ><img src="images/past_paper.png" /></span>
+					<span class="action_text">READ PAST PAPERS</span>
+					</a>
+			  </div>
+            <br>
+            </a>
+
+        </div>
+
+        <div ui-if="activeTab == 3" class="tab_info">
+            <div class="page-header"><img src="images/pastEvent/pastEvent2014.JPG" style="widht:100%" /></div>
+            <p><strong>Theme: </strong>‘Quality in private-sector higher education in India, Skills and personality development in higher education, Internationalization element of higher education, Transparency and accountability in management of higher education’</p>
+            <p>
+              Celebrating a decade of making education a richer experience, Sakal Educon 2014 was organized in the city of lights, Paris (France),
+              and attended by a delegation of sixty educationists from across India. The delegates came together to contribute their opinions on the year’s 
+              theme, ‘The Higher Education System’. Several reflections on sub-topics such as ‘Quality of higher education’, ‘Skill & Personality Development’, 
+              ‘International Element and Transparency & Accountability Management’ were made. 
+            </p>
+            <p>
+              Many prestigious and influential individuals including
+              Vice Chancellors of leading Central and State Universities as well as premiers of prestigious Institutions like IIT, AICTE,
+              MSBTE, etc. graced the occasion. The delegates also visited University of Paris Sorbonne 2014 & The Paris Institute of Political
+              Studies, simply referred to as Sciences Po which is a public research and higher education institution in Paris, France.
+            </p>
+            <p>
+            
+              <strong>Agenda:</strong> <br>a) Speaker sessions on : <br>   &nbsp;Analysis of higher education – Indian status, International status,
+              Qualities of world-class universities, Academic programs, Quality of human resource, Quality of infrastructure, Pedagogy 
+              innovations, Curriculum design, Governance and administration, Financial administration, Culture and sports in academic institutions, Skill development. <br>
+              b) Working sessions on: <br>&nbsp;Faculty, curriculum and pedagogy, Finance & Automation, Governance and Administration in Private and Public Universities.
+
+            </p>
+
+			  <div class="col-md-12 action_btn">
+					<a class="btn btn-default past_events_btn btn_raised" href="#/pastPapers">
+					<span ><img src="images/past_paper.png" /></span>
+					<span class="action_text">READ PAST PAPERS</span>
+					</a>
+			  </div>
+              <br>
+            </a>
+        </div>
+
+
+    </div>
 </div>
-		
-		
-</div>
+<script>
+.titleText{font-family: OpenSansRegular;font-size: 22px;color: #000000;}
+.abt_section, .title_section, .abt_educon_15{padding:4%; }
+.title_section {color : #ffffff; font-size : 50px; border-top:1px solid #ffffff;}
 
-
-</li>
-</div>
-</div>
-<div id="xyz" toggle-state="offsidebar-open" ng-click="div_hide_bg()"></div>
-<!-- END List group-->
-
-<!-- <button type="button" ng-click="health()" class="btn btn-primary btn-lg ml_next" style="margin-bottom:4%;margin-top:2%;margin-left:14px;margin-right:5%;width:92%;background-color:#ffffff;color:#009245;border-color:#009245;">Next</button> -->
-
-
-
+/*About Educon 2015 */
+.abt_educon_15{background-color:#ffffff; color: #404040;font-size: 16px;font-weight: normal;}
+.abt_educon_15 span{color:#000000; font-size:46px; font-family:OpenSansLight}
+.abt_educon_15 p{color:#333333; font-size:26px; margin:5% 0;line-height: 1.7;}
+.abt_section{background-color:#ffffff; color: #636466;font-size: 16px;font-weight: normal;}
+.topic_list {list-style-type:disc; padding-left:6%; background-color : #f1f1f1;line-height: 1.7}
+.topic_list li{font-size: 14px; color:#01b7df;}
+.topic_list li span{font-size: 26px; color:#333333;}
 
 
 
+/* End About Educon 2015 */
+
+/*Photo Gallery */
+.gallery_title{font-family:OpenSansBold;color:#000000;font-size:36px;background-color: #d9d9d9;padding:3%;top:4px;}
+.img_block {margin: 4% 0;}
+.img_block  img{width: 100%;}
+/*End Photo Gallery */
+
+/* Feedback Page*/
+.rating{
+  color: #a9a9a9;
+  margin: 0;
+  padding: 0;
+}
+
+ul.rating {
+  display: inline-block;
+}
+
+.rating li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0 15px;
+  text-align: center;
+  font-size : 50px;
+  cursor: pointer;
+  font-family: FontAwesome;
+}
+
+.rating .filled {
+  color: #9bbf68;
+}
+
+.feedback_question{font-family:OpenSansRegular;font-size: 26px ;color:#333333;padding-top: 5px;}
+.numberCircle {
+    border-radius: 50%;
+    /*behavior: url(PIE.htc);  remove if you don't care about IE8 */
+    background: #9bbf68;
+    border: 0;
+    color: #ffffff;
+    text-align: center;
+    font-size: 26px ;
+	font-family:OpenSansBold;
+	height: 46px;
+    padding: 5px;
+    width: 46px;
+}
+/* End feedback */
+
+
+/*Submit Modal */
+.submit-modal-dialog{margin : 20% 5% 0% 5%;}
+.submit-modal-content{background-color:#9bbf68;border-radius: 0; border:0;}
+.submit-modal-header{border-bottom: 0;}
+.submit-modal-body{font-family:OpenSansLight;font-size:48px;color:#ffffff;text-align: center;}
+.submit-modal-footer{border-top: 0;text-align: center;}
+.submit-modal-btn{background-color: #626262;border-color: #626262;color: #ffffff; border-radius: 0px; font-size:40px; font-family:OpenSansLight;width:45%;}
+.submit-modal-body p{text-align:center;font-family:OpenSansRegular;font-size:30px;color:#010101;}
+
+
+/* End Sumbit Modal*/
+
+
+
+@media all and (max-device-width: 640px){
+   .abt_educon_15 span{font-size:24px;}
+   .title_section, .view_agenda_btn, .past_events_btn, .feedback_btn {font-size : 24px;}
+   .abt_educon_15 p, .topic_list li span, .explore_list li span{font-size:14px;}
+   .header_title{font-size:17px;}
+   .back_btn{font-size:17px;}
+   .header_title img{width:10%;}
+   .back_btn img{width:20%;}
+   .header_logo{width:20% !important;}
+   .img_block {margin: 8% -8% 4% -4%;}
+   .gallery_title{font-size:18px;}
+   
+   .past_events_tab, .agenda_tab, .explore_tab{ font-size:16px;}
+   .tab_info  p{font-size:14px;}
+   
+   .titleText {font-size:16px;}
+   
+   .profile_name{font-size:15px;}
+   .overlay .profile_name{font-size:13px;}
+   
+   .profile_dest,.profile_country, .accContent {font-size:14px;}
+   .overlay .profile_dest{font-size:12px;}
+   
+    .content_block{ left: -10px;}
+   
+   .profile_pic{max-width: 140%; margin-top:10%;}
+   .agneda_action{margin :0;}
+   .agneda_action_title{font-size:14px;}
+   .agenda_subtab{font-size:13px;}
+   .speakers_title img, .explore_title img{width:8%;}
+   .feedbck_title img, .educon_title img, .photo_gallery_title img, .about_title img, .past_title img, .information_title img, .agenda_title img, .delegates_title img {width:10%;}
+   
+   .explore_germany_title { font-size: 30px;}
+   .rating li {padding: 5px 10px 0 5px;font-size : 33px;}
+   .numberCircle {font-size: 13px ;width: 36px;height: 36px;padding: 8px;}
+   .feedback_question{font-size: 15px;padding-top: 2%;}
+   .submit-modal-body{font-size:18px;}
+   .submit-modal-btn{font-size:18px;}
+   .submit-modal-body p{font-size:14px;}
+   
+   .box .desc span{font-size: 18px;}
+   .box .desc {top: 70%;}
+   .check_qustn{font-size:23px;}
+   .warningText{font-size:18px;}
+   .notification_menu {width:340px;}
+   .notification_menu > li.header{font-size:18px;}
+   .notification_menu > li .menu > li > a{font-size:14px;}
+   .poll_questions{font-size:16px;  margin-left: 5%;}
+   .poll_questions .radio input[type="radio"] {margin-top: 5px;}
+   
+}
+
+
+@media all and (max-device-width: 320px){
+   
+   .overlay .profile_name{font-size:12px;}
+   .overlay .profile_dest{font-size:10px;}
+   .explore_germany_title { font-size: 26px;}
+   .feedback_question{font-size: 13px;}
+   .rating li {font-size : 30px;}
+    .action_btn .action_text{padding-left: 0%}
+   .box .desc span{font-size: 15px;}
+   .notification_menu {width:300px;}
+   .notification_menu > li .menu > li > a{font-size:12px;}
+   
+}
+</script>

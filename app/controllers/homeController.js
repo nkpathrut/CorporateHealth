@@ -7,6 +7,14 @@ App
 						'$http',
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
+						
+						$(function() {
+									$('#homeController').slimScroll({
+										height:($rootScope.window_height-51),
+										width:$rootScope.window_width
+									});
+								});
+								
 					        /* $(function() {
 					             $( "#accordion-1" ).accordion();
 					          });*/

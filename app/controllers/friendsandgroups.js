@@ -5,6 +5,13 @@ App
         '$http',
         '$rootScope',
         function($scope, $state, $http, $rootScope) {
+		
+								$(function() {
+									$('#friendandgropsController').slimScroll({
+										height:($rootScope.window_height-51),
+										width:$rootScope.window_width
+									});
+								});
 			
 							$scope.div_show_bg=function(friend) {
 								document.getElementById('xyz').style.display = "block";

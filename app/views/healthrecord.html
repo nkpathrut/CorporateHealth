@@ -1,38 +1,7 @@
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <div ng-include="'app/views/partials/myHeader.html'"></div>
-<div ng-controller="healthrecordController">
+<div id="healthrecordController" ng-controller="healthrecordController">
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <style>
-    .arrow-down {
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #2cacde;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        < accordion close-others="false"> <accordion-group is-open="true" is-disabled="true"><!--First Accordion --> <accordion-heading>General Info <!-- <i class="pull-right ng-scope fa fa-chevron-down " > </i>ng-class="{ '
- fa-chevron-down ': !status.isOuterFirstOpen, 'fa-chevron-up': status.isOuterFirstOpen
-
-    }
-    "
- --> </ accordion-heading> <div class=""><!--removed col-xs-6 from here -->.arrow-down1 {
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 10px solid #f5535e;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .mouse-pointer {
-        cursor: pointer;
-        cursor: hand;
-    }
-    </style>
+    
 
     <div class="bs-example bg-white">
         <div class="panel-group bg-white" id="accordion" style="margin-bottom: 0px !important;">
@@ -40,7 +9,7 @@
             <div class="panel panel-default m0">
                 <div class="panel-heading pt0 pb0 pb0 pt0" ng-click="toggleIcon('0')">
                     <div class="row row-table makeGray0 bg-white" data-toggle="collapse" data-parent="#accordion" href=".collapseOne">
-                        <div class="col-xs-3 text-center" style="padding-right: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
+                        <div class="col-xs-3 text-center" style="padding-left: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
                             <img src="app/img/icons/blood_report.png" alt="Image" class="img-thumbnail thumb60 ">
                         </div>
                         <div class="col-xs-7 col-xxs-push-1" style="padding-left: 0px !important;">
@@ -100,7 +69,7 @@
             <div class="panel panel-default m0">
                 <div class="panel-heading pt0 pb0" ng-click="toggleIcon('1')">
                     <div class="row row-table makeGray1 bg-white" data-toggle="collapse" data-parent="#accordion" href=".collapseTwo">
-                        <div class="col-xs-3 text-center" style="padding-right: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
+                        <div class="col-xs-3 text-center" style="padding-left: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
                             <img src="app/img/icons/Suger_Details.png" alt="Image" class="img-thumbnail thumb48 ">
                         </div>
                         <div class="col-xs-7 col-xxs-push-1"  style="padding-left: 0px !important;">
@@ -160,7 +129,7 @@
             <div class="panel panel-default m0">
                 <div class="panel-heading pt0 pb0" ng-click="toggleIcon('2')">
                     <div class="row row-table makeGray2 bg-white" data-toggle="collapse" data-parent="#accordion" href=".collapseThree">
-                        <div class="col-xs-3 text-center" style="padding-right: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
+                        <div class="col-xs-3 text-center" style="padding-left: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
                             <img src="app/img/icons/Blood_Pressure.png" alt="Image" class="img-thumbnail thumb48 ">
                         </div>
                         <div class="col-xs-7 col-xxs-push-1" style="padding-left: 0px !important;">
@@ -220,7 +189,7 @@
             <div class="panel panel-default m0">
                 <div class="panel-heading pt0 pb0" ng-click="toggleIcon('3')">
                     <div class="row row-table makeGray3 bg-white" data-toggle="collapse" data-parent="#accordion" href=".collapseFour">
-                        <div class="col-xs-3 text-center" style="padding-right: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
+                        <div class="col-xs-3 text-center" style="padding-left: 0px !important;padding-top: 2mm; padding-bottom: 2mm;">
                             <img src="app/img/icons/Urine_Report.png" alt="Image" class="img-thumbnail thumb48 ">
                         </div>
                         <div class="col-xs-7 col-xxs-push-1" style="padding-left: 0px !important;">
@@ -280,4 +249,5 @@
 
     <center><button type="button" ng-click="activities()" class="btn btn-lg ml_next" style="margin-bottom:6% !important;margin-top:5%  !important;width:95%;background-color:#ffffff;color:#009245;border-color:#009245;padding-top: 5px;margin-left: 0px !important;padding-bottom: 5px;font-size: large  !important;font-weight: bold  !important;">Next</button>
 	</center>
+	</div>
 	<div id="xyz" toggle-state="offsidebar-open" ng-click="div_hide_bg()"></div>

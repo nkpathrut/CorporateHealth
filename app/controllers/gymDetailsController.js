@@ -6,6 +6,23 @@ App
 						'$http',
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
+						$(function() {
+									$('#gymDetailsController').slimScroll({
+										height:($rootScope.window_height-51),
+										width:$rootScope.window_width
+									});
+								});
+								
+							$scope.div_show_bg=function(friend) {
+								 //alert(JSON.stringify(friend));
+								document.getElementById('xyz').style.display = "block";
+								}
+								
+								//Function to Hide Popup
+								$scope.div_hide_bg=function(){
+								document.getElementById('xyz').style.display = "none";
+								}
+						
 							if($rootScope.empID==undefined)
 								{
 								 $rootScope.changeState('login');
