@@ -6,23 +6,6 @@ App
 						'$http',
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
-						$(function() {
-									$('#gymDetailsController').slimScroll({
-										height:($rootScope.window_height-51),
-										width:$rootScope.window_width
-									});
-								});
-								
-							$scope.div_show_bg=function(friend) {
-								 //alert(JSON.stringify(friend));
-								document.getElementById('xyz').style.display = "block";
-								}
-								
-								//Function to Hide Popup
-								$scope.div_hide_bg=function(){
-								document.getElementById('xyz').style.display = "none";
-								}
-						
 							if($rootScope.empID==undefined)
 								{
 								 $rootScope.changeState('login');
@@ -32,15 +15,9 @@ App
 							        .prev('.panel-heading')
 							        .find("i.indicator")
 							        .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
-							    console.log( $(e.target));
-							    $(e.target)
-						      //  .prev('.panel-heading')
-						       // .find("div.indicator")
-						        .toggleClass('bg-white bg-gray');
 							}
 							$('#accordion').on('hidden.bs.collapse', toggleChevron);
-							$('#accordion').on('shown.bs.collapse', toggleChevron);
-		
+							$('#accordion').on('shown.bs.collapse', toggleChevron);			
 							$scope.gymDetails=
 								[
 								 {
