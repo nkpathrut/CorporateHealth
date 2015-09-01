@@ -1,0 +1,46 @@
+
+<!-- start goals -->
+<div id="goals" class="col-xs-12 bg-gray container-fluid" style="padding-left: 5px !important;padding-right: 5px !important;">
+	<div class="panel-group p0 m0 bg-gray " id="accordion">
+		<!-- start accordion -->
+		<!-- start accordion s-->
+		<div ng-repeat-end="" class="bg-gray p0 m0 col-xs-12"
+			style="width: 100%; height: 6px;"></div><!-- hr div -->
+
+		<div class="panel panel-default p0 m0 b0 bg-white " ng-repeat-start="(gIndex,goal) in myGoals track by gIndex">
+			<div class="panel-heading p0 m0 b0">
+				<div class="panel-title p0 m0 b0 bg-white" >
+					<div  class="col-xs-12 pl0 pr0"  ng-class="{'bg-white': !goalCLasses[gIndex],'bg-gray': goalClasses[gIndex]}">
+	
+                       <span class="col-xs-2 pl0 pr0" data-toggle="collapse" data-parent="#accordion" href=".collapse{{gIndex}}" ng-click="changeClass(gIndex)">
+                        <img src="app/img/icons/badge_green.png" alt="green badge" height="35" width="35" class="center-block"> 
+                       </span>
+                       <span class="col-xs-8 pl0 pr0" data-toggle="collapse" data-parent="#accordion" href=".collapse{{gIndex}}" ng-click="changeClass(gIndex)"><!-- ng-click="goal[gIndex].close=!goal[gIndex].close" -->
+                         Maintain BMI
+                       </span>
+                       <span class="col-xs-2 pl0 pr0">
+<div class="checkbox c-checkbox">
+                     <label>
+                        <input type="checkbox">
+                        <span class="fa fa-check"></span>
+                     </label>
+                  </div>
+                       </span>
+					</div>
+				</div>
+			</div>
+			<div id="collapse{{gIndex}}" class="panel-collapse collapse b0 collapse{{gIndex}} wrapper bg-gray">
+                      gfgfgffhgfhgh
+			</div>
+		</div>
+		<div ng-repeat-end="" class="bg-gray p0 m0 col-xs-12"
+			style="width: 100%; height: 2px;">
+		</div>
+		<!-- end accordion-->
+	</div>
+			<div ng-repeat-end="" class="bg-gray p0 m0 col-xs-12"
+			style="width: 100%; height: 3px;">
+		</div>
+	<!-- end accordion -->
+</div>
+<!-- end goals -->

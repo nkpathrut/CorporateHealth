@@ -35,11 +35,10 @@ var App = angular.module('angle', ['ngRoute', 'ngAnimate', 'ngStorage', 'ngCooki
             	  $rootScope.changeState('login');
           	};          	
           	var userInfo = angular.fromJson($rootScope.$storage['userInfo']);
-          	if(userInfo!=undefined || userInfo.empID!=undefined)
+          	if(userInfo!=undefined)
     	    {
 			 $rootScope.empID=angular.copy(userInfo.empID);
 			 $rootScope.empName=angular.copy(userInfo.empName.firstName+" "+userInfo.empName.lastName);
-			 $rootScope.emailId=angular.copy(userInfo.emailID);
 			}
           	else
           		 $rootScope.changeState('login');
@@ -62,6 +61,7 @@ var App = angular.module('angle', ['ngRoute', 'ngAnimate', 'ngStorage', 'ngCooki
                 name: 'Persistent Systems Ltd',
 				pageTitle:'My Profile',
 				window_height:640,
+				window_width:360,
                 description: 'Persistent Health App',
                 year: ((new Date()).getFullYear()),
                 layout: {
@@ -107,6 +107,7 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
   // Application Routes
   // -----------------------------------   
   $stateProvider
+    $stateProvider
     .state('app', {
         url: '/app',
         abstract: true,
@@ -131,11 +132,13 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
 		url : '/profile',
 		title : 'Profile View',
 		controller : 'profileController',
+		resolve: helper.resolveFor('modernizr', 'icons','slimscroll'),
 	/*	resolve : helper
 		.resolveFor('slimscroll','xeditable'),*/
 		templateUrl : helper
 		.basepath('profile.html')
 	})
+	
 		
 	.state(
 	'app.healthrecord',
@@ -143,8 +146,8 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
 		url : '/healthrecord',
 		templateUrl :  helper
 		.basepath('healthrecord.html'),
-		controller : 'healthrecordController'
-		//resolve: helper.resolveFor('jquery-ui', 'jquery-ui-widgets')
+		controller : 'healthrecordController',
+		resolve: helper.resolveFor('modernizr', 'icons','slimscroll')
 	})
 	
 	.state(
@@ -153,8 +156,8 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
 		url : '/activities',
 		templateUrl :  helper
 		.basepath('activities.html'),
-		controller : 'activitiesController'
-		//resolve: helper.resolveFor('jquery-ui', 'jquery-ui-widgets')
+		controller : 'activitiesController',
+		resolve: helper.resolveFor('modernizr', 'icons','slimscroll')
 	})
 	
 	.state(
@@ -163,8 +166,8 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
 		url : '/home',
 		templateUrl :  helper
 		.basepath('home.html'),
-		controller : 'homeController'
-		//resolve: helper.resolveFor('jquery-ui', 'jquery-ui-widgets')
+		controller : 'homeController',
+		resolve: helper.resolveFor('modernizr', 'icons','slimscroll')
 	})
 	
 	.state(
@@ -174,7 +177,7 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
 		templateUrl :  helper
 		.basepath('gymdetails.html'),
 		controller : 'gymDetailsController',
-		resolve: helper.resolveFor('bootstrap-js')
+		resolve: helper.resolveFor('modernizr', 'icons','slimscroll')
 	})
 	
 	.state('app.friendsandgroups',
@@ -182,24 +185,24 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
 		url : '/Groups',
 		templateUrl :  helper
 		.basepath('friendsandgroups.html'),
-		controller : 'friendsAndGroupsController'
-		//resolve: helper.resolveFor('jquery-ui', 'jquery-ui-widgets')
+		controller : 'friendsAndGroupsController',
+		resolve: helper.resolveFor('modernizr', 'icons','slimscroll')
 	})	
 	.state('app.creategroup',
 	{
 		url : '/creategroup',
 		templateUrl :  helper
 		.basepath('createGroup.html'),
-		controller : 'createGroupController'
-		//resolve: helper.resolveFor('jquery-ui', 'jquery-ui-widgets')
+		controller : 'createGroupController',
+		resolve: helper.resolveFor('modernizr', 'icons','slimscroll')
 	})	
 	.state('app.addfriends',
 	{
 		url : '/addfriends',
 		templateUrl :  helper
 		.basepath('addFriends.html'),
-		controller : 'addFriendsController'
-		//resolve: helper.resolveFor('jquery-ui', 'jquery-ui-widgets')
+		controller : 'addFriendsController',
+		resolve: helper.resolveFor('modernizr', 'icons','slimscroll')
 	})	
 
 			.state('app.chatPage',
@@ -230,6 +233,23 @@ function ($stateProvider, $locationProvider, $urlRouterProvider, helper) {
 		//resolve: helper.resolveFor('jquery-ui', 'jquery-ui-widgets')
 	})	
 	
+	.state('app.mygoals',
+	{
+		url : '/mygoals',
+		templateUrl :  helper
+		.basepath('mygoals.html'),
+		controller : 'mygoalsController',
+		resolve: helper.resolveFor('classyloader','bootstrap-js')
+	})	
+	
+		.state('app.selectgoals',
+	{
+		url : '/selectgoals',
+		templateUrl :  helper
+		.basepath('selectgoal.html'),
+		controller : 'selectgoalsController',
+		resolve: helper.resolveFor('bootstrap-js')
+	})
     // 
     // CUSTOM RESOLVES
     //   Add your own resolves properties
@@ -335,7 +355,9 @@ App
                          'vendor/jquery-ui/ui/droppable.js',
                          'vendor/jquery-ui/ui/sortable.js',
                          'vendor/jqueryui-touch-punch/jquery.ui.touch-punch.min.js'],
- 'bootstrap-js':           ['vendor/bootstrap.min.js']     
+ 'bootstrap-js':           ['vendor/bootstrap.min.js'],
+'slimscroll':         ['vendor/slimScroll/jquery.slimscroll.min.js'],
+'classyloader':       ['vendor/jquery-classyloader/js/jquery.classyloader.min.js']
     },
     // Angular based script (use the right module name)
     modules: [
@@ -356,6 +378,7 @@ App.controller('AppController',
 
    var init = function () {
 							$rootScope.window_height=$( window ).height()-60;	
+							$rootScope.window_width=$( window ).width();
 							};
 							init();	
    
@@ -772,6 +795,7 @@ App.directive('toggleState', ['toggleStateService', function(toggle) {
           if(classname) {
             if( $body.hasClass(classname) ) {
               $body.removeClass(classname);
+
               if( ! attrs.noPersist)
                 toggle.removeState(classname);
             }
@@ -1382,3 +1406,51 @@ $(document).on('click.fileinput.data-api', '[data-provides="fileinput"]', functi
 })
 
 }(window.jQuery);
+
+
+App.directive('classyloader', ["$timeout", "Utils", function($timeout, Utils) {
+	  'use strict';
+
+	  var $scroller       = $(window),
+	      inViewFlagClass = 'js-is-in-view'; // a classname to detect when a chart has been triggered after scroll
+
+	  return {
+	    restrict: 'A',
+	    link: function(scope, element, attrs) {
+	      // run after interpolation  
+	      $timeout(function(){
+	  
+	        var $element = $(element),
+	            options  = $element.data();
+	        
+	        // At lease we need a data-percentage attribute
+	        if(options) {
+	          if( options.triggerInView ) {
+
+	            $scroller.scroll(function() {
+	              checkLoaderInVIew($element, options);
+	            });
+	            // if the element starts already in view
+	            checkLoaderInVIew($element, options);
+	          }
+	          else
+	            startLoader($element, options);
+	        }
+
+	      }, 0);
+
+	      function checkLoaderInVIew(element, options) {
+	        var offset = -2;
+	        if( ! element.hasClass(inViewFlagClass) &&
+	            Utils.isInView(element, {topoffset: offset}) ) {
+	          startLoader(element, options);
+	        }
+	      }
+	      function startLoader(element, options) {
+	        element.ClassyLoader(options).addClass(inViewFlagClass);
+	      }
+	    }
+	  };
+	}]);
+
+

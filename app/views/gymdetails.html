@@ -1,11 +1,10 @@
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 
 <header ng-include="'app/views/partials/myHeader.html'" class=" mt0 pt0"></header>
 
+<div id="gymDetailsController">
 <div class="panel-group p0 m0 b0 bg-gray" id="accordion">
   <div class="panel panel-default p0 m0 b0" >
-  
-  
     <div class="panel-heading p0 m0 b0">
       <div class="panel-title p0 m0 b0">
         <div class="accordion-toggle col-xs-12 p0 m0 b0 bg-gray" data-toggle="collapse" data-parent="#accordion" href=".collapseOne" ng-disabled="true">
@@ -15,17 +14,10 @@
                         <span class="col-xs-5 pl0">Calories Burnt</span>                       
                      </div>
         </div>
-       <!--  <i class="indicator glyphicon glyphicon-chevron-down   col-xs-2"></i> -->
+     
       </div>
-    </div>
+    </div></div>
 
-   <!--  <div id="collapseOne" class="panel-collapse collapse collapseOne col-xs-12">
-      <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-     -->
-  </div>
   <!-- End Accordion 1 -->
   <div class="panel panel-default p0 m0 b0" ng-repeat="(pIndex, data) in activityDetails | limitTo:4">
     <div class="panel-heading p0 m0 b0">
@@ -67,4 +59,6 @@
 <button type="button" ng-click="activities()" class="btn btn-success btn-lg ml_next" style="margin-bottom: 0%;margin-bottom:0%; margin-top: 25px; width: 80%;  border-color: #009245;font-size:2rem;">View More</button>
 </div>
 
-<img src="app/img/icons/graph.png" height="420" width="100%"></center>
+<img src="app/img/icons/graph.png" height="420" width="100%"/></center>
+</div>
+<div id="xyz" toggle-state="offsidebar-open" ng-click="div_hide_bg()"></div> 

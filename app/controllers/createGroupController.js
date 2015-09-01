@@ -7,8 +7,13 @@ App
 						'$http',
 						'$rootScope',
 						function($scope, $state, $http, $rootScope) {
-						
-						$scope.div_show_bg=function(friend) {
+						$(function() {
+									$('#createGroupController').slimScroll({
+										height:($rootScope.window_height-51),
+										width:$rootScope.window_width
+									});
+								});
+							$scope.div_show_bg=function(friend) {
 								 //alert(JSON.stringify(friend));
 								document.getElementById('xyz').style.display = "block";
 								}
@@ -17,13 +22,6 @@ App
 								$scope.div_hide_bg=function(){
 								document.getElementById('xyz').style.display = "none";
 								}
-					      //alert("create groups"); 
-							$scope.status1=false;
-							$scope.status2=false;
-							$scope.status3=false;
-							$scope.status4=false;
-							$scope.status5=false;
-							$scope.status6=false;
 							
 							//Function To Display Popup
 								 $scope.div_show=function(friend) {
@@ -36,7 +34,6 @@ App
 								document.getElementById('abc').style.display = "none";
 								}
 							
-						
 							
 							
 							$scope.selectAllFlag=false;
@@ -282,7 +279,7 @@ App
 							    	 }
 							
 							var init = function () {
-								$rootScope.app.pageTitle="Add Friends";
+								$rootScope.app.pageTitle="Create Group";
 							};
 							init();	
 						} ]);

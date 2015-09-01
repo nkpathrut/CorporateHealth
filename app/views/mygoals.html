@@ -1,0 +1,126 @@
+<!-- START panel tab-->
+<div class="panel" style="margin-bottom:-20px !important; background-color:#b8b8b8;">
+   <tabset justified="true">
+      <tab id="tab1"  style="width:33.33% !important; " class="bg-gray">
+         <tab-heading style="font-size:100%;">
+           My Goals
+          </tab-heading>
+         <div class="container-fluid bg-gray" style="padding-left:5px;padding-right:5px;"><!-- container-fluid -->
+         <!-- start badges -->
+          <div id="badges" class="col-xs-12 pl0 pr0 bg-gray">
+           <span class="col-xs-4 pl0 pr0 pt">
+             <span class="col-xs-12 pl0 pr0 ">
+              <img src="app/img/icons/badge_green.png" alt="green badge" height="65" width="60" class="center-block">
+             </span>
+             <span class="col-xs-12 pl0 pr0 text-center" style="font-size:1.1rem;">
+              Lose Weight
+             </span>
+             
+           </span>
+           <span class="col-xs-4 pl0 pr0 pt">
+             <span class="col-xs-12 pl0 pr0">
+              <img src="app/img/icons/badge_yellow.png" alt="yellow badge" height="65" width="60" class="center-block">
+             </span>
+             <span class="col-xs-12 pl0 pr0 text-center" style="font-size:1.1rem;">
+              Stress Managment
+             </span>
+           </span>
+           
+           <span class="col-xs-4 pl0 pr0 pt">
+             <span class="col-xs-12 pl0 pr0">
+              <img src="app/img/icons/badge_blue.png" alt="blue badge" height="65" width="60" class="center-block">
+             </span>
+             <span class="col-xs-12 pl0 pr0 text-center" style="font-size:1.1rem;">
+              Lose Weight
+             </span>
+           </span>
+          </div>
+          <!-- end badges -->
+          
+          <!-- start goals -->
+           <div id="goals" class="col-xs-12 pl0 pr0 bg-gray">
+    <div class="panel-group p0 m0 bg-gray " id="accordion"><!-- start accordion -->
+      <!-- start accordion s-->
+              <div ng-repeat-end="" class="bg-gray p0 m0 col-xs-12" style="width:100%;height:8px;"></div>
+      
+        <div class="panel panel-default p0 m0 bg-white " ng-repeat-start="(gIndex,goal) in myGoals track by gIndex">
+            <div class="panel-heading p0 m0">
+                <div class="panel-title p0 m0 bg-white">
+                    <div data-toggle="collapse" data-parent="#accordion" href=".collapse{{gIndex}}" class="col-xs-12 pl0 pr0 bg-white">
+                     <div class="col-xs-9 pl0 pr0" style="font-size:1.0rem;">
+                       <span class="col-xs-12 pl pr0 text-bold pt" style="font-size:2rem;">{{goal.name}}</span>
+                        <div class="col-xs-12 pl pr0">
+                          <span class="col-xs-4 pl0 pr0 ">
+                           <span class="col-xs-12 pl0 pr0">{{goal.target}}</span>
+                           <span class="col-xs-12 pl0 pr0" style="font-size:1.3rem;">{{goal.targetValue}}</span>
+                          </span>
+                          <span class="col-xs-4 pl0 pr0 ">
+                           <span class="col-xs-12 pl0 pr0">Target Date</span>
+                           <span class="col-xs-12 pl0 pr0" style="font-size:1.3rem;">{{goal.targetDate | date:'d MMM'}}</span>
+                          </span>
+                          <span class="col-xs-4 pl0 pr0 ">
+                           <span class="col-xs-12 pl0 pr0">Status</span>
+                           <span class="col-xs-12 pl0 pr0" style="font-size:1.3rem;">{{goal.status}}</span>
+                          </span>                                                    
+                        </div>
+                     </div>
+                    <div class="col-xs-3 text-left pl0 pr0 pt15">
+                               <canvas classyloader=""   data-height="80px;" data-width="75px" data-diameter="30" data-font-size="15px" data-percentage="{{goal.progessValue}}" data-speed="30" data-line-color="{{colorByName(goal.progressColor)}}" data-remaining-line-color="#edf2f6" data-line-width="6" class="mt0 pt0"></canvas>
+                              <!-- <canvas  class="loader3" width="200" height="200"></canvas> -->
+                        
+                    </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div id="collapse{{gIndex}}" class="panel-collapse collapse  collapse{{gIndex}} wrapper bg-white">
+                <div class="panel-body pl0 pr0 pt pb0">
+                   <div id="detailtext{{dIndex}}" ng-repeat="(dIndex,goalDetails) in goal.details track by dIndex" class="col-xs-12 pl0 pr0" ><!-- style="border-bottom: 1px solid {{colorByName('primary')}};"-->
+                     <span class="col-xs-3">
+                      <img src="app/img/icons/{{goalDetails.image}}.png" alt="yellow badge" height="35" width="35" class="center-block">
+                     </span>
+                     <span class="col-xs-9" style="padding-top:7px;">
+                      {{goalDetails.time}} | {{goalDetails.calories}}  | {{goalDetails.distance}}
+                     </span> 
+                     <hr class="rmUnderline" style="border-color: red !important;  margin-top:3px;margin-bottom:4px;  margin-left: 55px !important;" />       
+           
+                   </div>
+
+                   <div class=" pl0 pr0 text-success text-center" style="padding-top:55px !important;">
+                    <em class="fa fa-plus"></em>&nbsp;
+                    Select Activity
+                   </div>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+        <div ng-repeat-end="" class="bg-gray p0 m0 col-xs-12" style="width:100%;height:8px;"></div>
+<!-- end accordion-->
+
+    </div><!-- end accordion -->
+
+           </div>
+          <!-- end goals -->
+         </div><!-- end container fluid here -->
+      </tab>
+      <tab id="tab2"  style="width:33.33% !important; ">
+         <tab-heading>
+          My Arena
+         </tab-heading>
+         <div>
+
+         </div>
+      </tab>
+      <tab id="tab1"  style="width:33.33% !important; ">
+         <tab-heading>
+          LeaderBoard
+         </tab-heading>
+         <div>
+
+         </div>
+      </tab>      
+   </tabset>
+</div>
+<!-- END panel tab-->
